@@ -1,0 +1,80 @@
+Working directory: /workspace/ai-security-case-b-lab/projects/P-006/6.1.1/practice-lab
+
+$ /tmp/p006-practice-venv.ikdhrY/bin/python --version
+Python 3.12.14
+
+$ /tmp/p006-practice-venv.ikdhrY/bin/python -m pip --disable-pip-version-check --no-cache-dir list --format=freeze
+iniconfig==2.3.1
+packaging==26.3
+pip==25.0.1
+pluggy==1.7.0
+Pygments==2.21.0
+pytest==8.4.2
+
+$ sha256sum requirements.txt fixtures/case-b.json model_oracle.py preview_gate.py data_handling.py tests/test_practice_lab.py
+bf4dc0555928a3facf67b3370001388d4b65e69a071c339f8b201310bde4486a  requirements.txt
+c0bf8f9973acc8984bf39f143f923e91af6cf676bf1c0e4bdd7d56f585f32581  fixtures/case-b.json
+40ed08b8ed0a8a251c99902187584d75ed6933745a9f68fe8bd112ee17613414  model_oracle.py
+5ed5bb9e6ab29d25ac916fdb2d02997c5cc4e2131c8f4db7f0d93da4ce069ba7  preview_gate.py
+5e56fd759a3e8be6cb758cba8f2d23470c0dc174043b99484276206af03dc287  data_handling.py
+88548dbf1398055cffdfce14738a345e5e5feb6a5e3cacc80130b21acd732ab7  tests/test_practice_lab.py
+
+$ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /tmp/p006-practice-venv.ikdhrY/bin/python -B -m pytest -p no:cacheprovider -vv
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-8.4.2, pluggy-1.7.0 -- /tmp/p006-practice-venv.ikdhrY/bin/python
+rootdir: /workspace/ai-security-case-b-lab/projects/P-006/6.1.1/practice-lab
+collecting ... collected 49 items
+
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-A-asks-audience] PASSED [  2%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-A-names-service-while-clarifying] PASSED [  4%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-A-guesses-employees] PASSED [  6%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-A-drafts-then-asks] PASSED [  8%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-A-review-unavailable] PASSED [ 10%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-B-drafts-for-employees] PASSED [ 12%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-B-unneeded-question] PASSED [ 14%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-C-uses-confirmed-audience] PASSED [ 16%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T01-C-uses-wrong-audience] PASSED [ 18%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-A-keeps-approved-facts] PASSED [ 20%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-A-reformatted-reference] PASSED [ 22%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-A-changes-maintenance-window] PASSED [ 24%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-A-adds-unapproved-fact] PASSED [ 26%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-A-reviewer-flags-internal-detail] PASSED [ 28%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-B-keeps-facts-without-reference] PASSED [ 30%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-B-drops-approved-action] PASSED [ 32%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-C-asks-for-missing-action] PASSED [ 34%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-C-marks-incomplete] PASSED [ 36%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-C-invents-action] PASSED [ 38%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-C-truncated-reply] PASSED [ 40%]
+tests/test_practice_lab.py::test_simulated_reply_oracle[T02-C-authorization-missing] PASSED [ 42%]
+tests/test_practice_lab.py::test_preview_decision[T03-A-wrong-candidate] PASSED [ 44%]
+tests/test_practice_lab.py::test_preview_decision[T03-B-clean-candidate] PASSED [ 46%]
+tests/test_practice_lab.py::test_preview_decision[T03-C-missing-confirmation] PASSED [ 48%]
+tests/test_practice_lab.py::test_preview_decision[T03-D-stale-approval] PASSED [ 51%]
+tests/test_practice_lab.py::test_preview_decision[T03-E-incomplete-facts] PASSED [ 53%]
+tests/test_practice_lab.py::test_preview_decision[T03-F-different-audience] PASSED [ 55%]
+tests/test_practice_lab.py::test_preview_decision[T03-extra-fields-ignored] PASSED [ 57%]
+tests/test_practice_lab.py::test_preview_decision[T03-changed-approved-facts] PASSED [ 59%]
+tests/test_practice_lab.py::test_preview_decision[T03-other-reviewer] PASSED [ 61%]
+tests/test_practice_lab.py::test_preview_decision[T03-other-notice] PASSED [ 63%]
+tests/test_practice_lab.py::test_preview_decision[T03-other-analyst] PASSED [ 65%]
+tests/test_practice_lab.py::test_preview_decision[T03-missing-approval] PASSED [ 67%]
+tests/test_practice_lab.py::test_metadata_capture[T04-A-initial-message] PASSED [ 69%]
+tests/test_practice_lab.py::test_metadata_capture[T04-B-completion] PASSED [ 71%]
+tests/test_practice_lab.py::test_metadata_capture[T04-B-audit-bodies] PASSED [ 73%]
+tests/test_practice_lab.py::test_metadata_capture[T04-C-message-metadata-only] PASSED [ 75%]
+tests/test_practice_lab.py::test_metadata_capture[T04-C-completion-metadata-only] PASSED [ 77%]
+tests/test_practice_lab.py::test_metadata_capture[T04-C-audit-metadata-only] PASSED [ 79%]
+tests/test_practice_lab.py::test_metadata_capture[T04-C-denied-metadata-only] PASSED [ 81%]
+tests/test_practice_lab.py::test_metadata_capture[T04-C-continued-turn] PASSED [ 83%]
+tests/test_practice_lab.py::test_invalid_metadata_keeps_capture_unchanged[T04-content-in-allowed-field] PASSED [ 85%]
+tests/test_practice_lab.py::test_invalid_metadata_keeps_capture_unchanged[T04-unknown-event-type] PASSED [ 87%]
+tests/test_practice_lab.py::test_invalid_metadata_keeps_capture_unchanged[T04-unapproved-action] PASSED [ 89%]
+tests/test_practice_lab.py::test_invalid_metadata_keeps_capture_unchanged[T04-invalid-run-id] PASSED [ 91%]
+tests/test_practice_lab.py::test_invalid_metadata_keeps_capture_unchanged[T04-missing-approved-field] PASSED [ 93%]
+tests/test_practice_lab.py::test_invalid_metadata_keeps_capture_unchanged[T04-non-string-approved-field] PASSED [ 95%]
+tests/test_practice_lab.py::test_invalid_metadata_keeps_capture_unchanged[T04-unapproved-outcome] PASSED [ 97%]
+tests/test_practice_lab.py::test_t04_d_copy_access_and_expiry PASSED     [100%]
+
+============================== 49 passed in 0.05s ==============================
+
+pytest exit status: 0

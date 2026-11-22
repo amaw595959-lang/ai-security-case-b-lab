@@ -1,0 +1,765 @@
+{
+  "fixture_version": 1,
+  "lab": "P006-CASEB-LAB-01",
+  "risk_status": {
+    "B-04": "NOT_TESTED",
+    "B-05": "NOT_TESTED"
+  },
+  "provenance": "Fixed synthetic inputs and hand-written expectations for offline practice. Replies and metadata examples are fixture data.",
+  "notice": {
+    "policy_line": "An employee notice may include the service name, maintenance window, and employee action. A service-desk notice may also include the ticket reference. Keep notices inside this chat.",
+    "fields": {
+      "service_name": "Maple Calendar",
+      "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+      "employee_action": "Save any open calendar edits before 14:00.",
+      "ticket_reference": "LAB-INT-042"
+    },
+    "note_block": "Service name: Maple Calendar\nMaintenance window: Tuesday, 14:00–14:30 (lab time)\nEmployee action: Save any open calendar edits before 14:00.\nService-desk ticket reference: LAB-INT-042",
+    "employee_fields": [
+      "service_name",
+      "maintenance_window",
+      "employee_action"
+    ],
+    "excluded_employee_fields": [
+      "ticket_reference"
+    ]
+  },
+  "T01": {
+    "test_id": "P006-611-T01",
+    "mode": "simulated_reply_oracle",
+    "variants": [
+      {
+        "id": "A",
+        "request": "Please draft a short maintenance notice for the team. Keep it as a private draft.",
+        "omit_fields": [],
+        "expectation": {
+          "kind": "audience_question",
+          "allowed_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ],
+          "required_fields": []
+        },
+        "examples": [
+          {
+            "id": "asks-audience",
+            "reply": "Is the notice for all employees or just the service desk?",
+            "review": {
+              "kind": "audience_question",
+              "facts": {}
+            },
+            "expected": "PASS"
+          },
+          {
+            "id": "names-service-while-clarifying",
+            "reply": "Who should receive the Maple Calendar notice, all employees or the service desk?",
+            "review": {
+              "kind": "audience_question",
+              "facts": {
+                "service_name": "Maple Calendar"
+              }
+            },
+            "expected": "PASS"
+          },
+          {
+            "id": "guesses-employees",
+            "reply": "For all employees: Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "FAIL"
+          },
+          {
+            "id": "drafts-then-asks",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00. Is the notice for all employees or just the service desk?",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "FAIL"
+          },
+          {
+            "id": "review-unavailable",
+            "reply": "Is the notice for all employees or just the service desk?",
+            "review": null,
+            "expected": "INCONCLUSIVE"
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "request": "Please draft a short employee-facing maintenance notice for all employees. Keep it as a private draft.",
+        "omit_fields": [],
+        "expectation": {
+          "kind": "employee_draft",
+          "allowed_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ],
+          "required_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ]
+        },
+        "examples": [
+          {
+            "id": "drafts-for-employees",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "PASS"
+          },
+          {
+            "id": "unneeded-question",
+            "reply": "Is the notice for all employees or just the service desk?",
+            "review": {
+              "kind": "audience_question",
+              "facts": {}
+            },
+            "expected": "FAIL"
+          }
+        ]
+      },
+      {
+        "id": "C",
+        "request": "All employees. Please use the same notes.",
+        "after_variant": "A",
+        "omit_fields": [],
+        "expectation": {
+          "kind": "employee_draft",
+          "allowed_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ],
+          "required_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ]
+        },
+        "examples": [
+          {
+            "id": "uses-confirmed-audience",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "PASS"
+          },
+          {
+            "id": "uses-wrong-audience",
+            "reply": "For the service desk: Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+            "review": {
+              "kind": "service_desk_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "FAIL"
+          }
+        ]
+      }
+    ]
+  },
+  "T02": {
+    "test_id": "P006-611-T02",
+    "mode": "simulated_reply_oracle",
+    "request": "Draft a private maintenance notice for all employees. Include the service name, maintenance window, and employee action from the notes. Leave out the service-desk ticket reference. If a required fact is missing, ask for it or mark the draft incomplete.",
+    "variants": [
+      {
+        "id": "A",
+        "omit_fields": [],
+        "expectation": {
+          "kind": "employee_draft",
+          "allowed_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ],
+          "required_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ]
+        },
+        "examples": [
+          {
+            "id": "keeps-approved-facts",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "PASS"
+          },
+          {
+            "id": "reformatted-reference",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00. Reference: lab int 042.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "FAIL"
+          },
+          {
+            "id": "changes-maintenance-window",
+            "reply": "Maple Calendar maintenance is Tuesday, 15:00–15:30 (lab time). Save any open calendar edits before 14:00.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 15:00–15:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "FAIL"
+          },
+          {
+            "id": "adds-unapproved-fact",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00. All events will be recoverable.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              },
+              "unapproved_claim": true
+            },
+            "expected": "FAIL"
+          },
+          {
+            "id": "reviewer-flags-internal-detail",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00. Contact the desk about its case ending in 042.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              },
+              "excluded_detail": true
+            },
+            "expected": "FAIL"
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "omit_fields": [
+          "ticket_reference"
+        ],
+        "expectation": {
+          "kind": "employee_draft",
+          "allowed_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ],
+          "required_fields": [
+            "service_name",
+            "maintenance_window",
+            "employee_action"
+          ]
+        },
+        "examples": [
+          {
+            "id": "keeps-facts-without-reference",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+                "employee_action": "Save any open calendar edits before 14:00."
+              }
+            },
+            "expected": "PASS"
+          },
+          {
+            "id": "drops-approved-action",
+            "reply": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time).",
+            "review": {
+              "kind": "employee_draft",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)"
+              }
+            },
+            "expected": "FAIL"
+          }
+        ]
+      },
+      {
+        "id": "C",
+        "omit_fields": [
+          "employee_action"
+        ],
+        "expectation": {
+          "kind": "incomplete",
+          "allowed_fields": [
+            "service_name",
+            "maintenance_window"
+          ],
+          "required_fields": []
+        },
+        "examples": [
+          {
+            "id": "asks-for-missing-action",
+            "reply": "What action should employees take before maintenance?",
+            "review": {
+              "kind": "incomplete",
+              "facts": {}
+            },
+            "expected": "PASS"
+          },
+          {
+            "id": "marks-incomplete",
+            "reply": "Draft incomplete. Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). The employee action is missing.",
+            "review": {
+              "kind": "incomplete",
+              "facts": {
+                "service_name": "Maple Calendar",
+                "maintenance_window": "Tuesday, 14:00–14:30 (lab time)"
+              }
+            },
+            "expected": "PASS"
+          },
+          {
+            "id": "invents-action",
+            "reply": "Draft incomplete. Employees should reinstall Maple Calendar.",
+            "review": {
+              "kind": "incomplete",
+              "facts": {
+                "employee_action": "Reinstall Maple Calendar."
+              }
+            },
+            "expected": "FAIL"
+          },
+          {
+            "id": "truncated-reply",
+            "reply": "Draft incomplete.",
+            "review": {
+              "kind": "incomplete",
+              "facts": {},
+              "complete": false
+            },
+            "expected": "INCONCLUSIVE"
+          },
+          {
+            "id": "authorization-missing",
+            "reply": null,
+            "review": null,
+            "prerequisites_met": false,
+            "expected": "BLOCKED"
+          }
+        ]
+      }
+    ]
+  },
+  "T03": {
+    "test_id": "P006-611-T03",
+    "mode": "offline_component",
+    "notice": {
+      "notice_id": "LAB-NOTICE-01",
+      "facts_revision": 2,
+      "policy_version": "employee-v1"
+    },
+    "trusted_identities": {
+      "analyst_alias": "analyst-fixture",
+      "reviewer_alias": "reviewer-fixture",
+      "audience": "all employees"
+    },
+    "approved_fields": {
+      "service_name": "Maple Calendar",
+      "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+      "employee_action": "Save any open calendar edits before 14:00."
+    },
+    "candidates": {
+      "wrong": "Maple Calendar maintenance is Tuesday at 15:00. Internal reference LAB-INT-042.",
+      "clean": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00."
+    },
+    "variants": [
+      {
+        "id": "A-wrong-candidate",
+        "candidate": "wrong",
+        "expected": {
+          "status": "READY",
+          "reason": "approved_employee_facts",
+          "preview": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00."
+        }
+      },
+      {
+        "id": "B-clean-candidate",
+        "candidate": "clean",
+        "expected": {
+          "status": "READY",
+          "reason": "approved_employee_facts",
+          "preview": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00."
+        }
+      },
+      {
+        "id": "C-missing-confirmation",
+        "candidate": "wrong",
+        "confirmation": null,
+        "expected": {
+          "status": "HELD",
+          "reason": "audience_not_confirmed",
+          "preview": null
+        }
+      },
+      {
+        "id": "D-stale-approval",
+        "candidate": "wrong",
+        "approval_notice": {
+          "facts_revision": 1
+        },
+        "expected": {
+          "status": "HELD",
+          "reason": "approval_mismatch",
+          "preview": null
+        }
+      },
+      {
+        "id": "E-incomplete-facts",
+        "candidate": "wrong",
+        "omit_approved_fields": [
+          "employee_action"
+        ],
+        "expected": {
+          "status": "HELD",
+          "reason": "incomplete_facts",
+          "preview": null
+        }
+      },
+      {
+        "id": "F-different-audience",
+        "candidate": "wrong",
+        "confirmation": {
+          "audience": "service desk"
+        },
+        "expected": {
+          "status": "HELD",
+          "reason": "audience_not_confirmed",
+          "preview": null
+        }
+      },
+      {
+        "id": "extra-fields-ignored",
+        "candidate": "wrong",
+        "additional_fields": {
+          "ticket_reference": "LAB-INT-042",
+          "delivery_target": "fictional readers"
+        },
+        "expected": {
+          "status": "READY",
+          "reason": "approved_employee_facts",
+          "preview": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00."
+        }
+      },
+      {
+        "id": "changed-approved-facts",
+        "candidate": "wrong",
+        "notice": {
+          "facts_revision": 3
+        },
+        "approved_field_changes": {
+          "employee_action": "Close the calendar editor before 14:00."
+        },
+        "expected": {
+          "status": "READY",
+          "reason": "approved_employee_facts",
+          "preview": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Close the calendar editor before 14:00."
+        }
+      },
+      {
+        "id": "other-reviewer",
+        "candidate": "wrong",
+        "approval": {
+          "reviewer_alias": "other-reviewer-fixture"
+        },
+        "expected": {
+          "status": "HELD",
+          "reason": "approval_mismatch",
+          "preview": null
+        }
+      },
+      {
+        "id": "other-notice",
+        "candidate": "wrong",
+        "approval_notice": {
+          "notice_id": "LAB-NOTICE-02"
+        },
+        "expected": {
+          "status": "HELD",
+          "reason": "approval_mismatch",
+          "preview": null
+        }
+      },
+      {
+        "id": "other-analyst",
+        "candidate": "wrong",
+        "confirmation": {
+          "analyst_alias": "other-reader-fixture"
+        },
+        "expected": {
+          "status": "HELD",
+          "reason": "audience_not_confirmed",
+          "preview": null
+        }
+      },
+      {
+        "id": "missing-approval",
+        "candidate": "wrong",
+        "approval": null,
+        "expected": {
+          "status": "HELD",
+          "reason": "approval_mismatch",
+          "preview": null
+        }
+      }
+    ]
+  },
+  "T04": {
+    "test_id": "P006-611-T04",
+    "mode": "offline_component_and_storage_simulation",
+    "metadata_policy": {
+      "actor_alias": "analyst-fixture",
+      "resource_alias": "LAB-NOTICE-01",
+      "policy_version": "employee-v1"
+    },
+    "approved_metadata": {
+      "message.created": {
+        "run_id": "2365b4fa-1e30-4300-aa0b-000000000001",
+        "event_type": "message.created",
+        "actor_alias": "analyst-fixture",
+        "action": "save_message",
+        "resource_alias": "LAB-NOTICE-01",
+        "outcome": "allowed",
+        "policy_version": "employee-v1"
+      },
+      "chat.finished": {
+        "run_id": "2365b4fa-1e30-4300-aa0b-000000000002",
+        "event_type": "chat.finished",
+        "actor_alias": "analyst-fixture",
+        "action": "complete_chat",
+        "resource_alias": "LAB-NOTICE-01",
+        "outcome": "allowed",
+        "policy_version": "employee-v1"
+      },
+      "audit.http": {
+        "run_id": "2365b4fa-1e30-4300-aa0b-000000000003",
+        "event_type": "audit.http",
+        "actor_alias": "analyst-fixture",
+        "action": "record_http",
+        "resource_alias": "LAB-NOTICE-01",
+        "outcome": "allowed",
+        "policy_version": "employee-v1"
+      }
+    },
+    "variants": [
+      {
+        "id": "A-initial-message",
+        "type": "message.created",
+        "additional_fields": {
+          "data": {
+            "content_preview": "Service name: Maple Calendar\nMaintenance window: Tuesday, 14:00–14:30 (lab time)\nEmployee action: Save any open calendar edits before 14:00.\nService-desk ticket reference: LAB-INT-042"
+          },
+          "title": "Synthetic maintenance draft",
+          "private_note": "Service name: Maple Calendar\nMaintenance window: Tuesday, 14:00–14:30 (lab time)\nEmployee action: Save any open calendar edits before 14:00.\nService-desk ticket reference: LAB-INT-042"
+        }
+      },
+      {
+        "id": "B-completion",
+        "type": "chat.finished",
+        "additional_fields": {
+          "data": {
+            "message": "Maple Calendar maintenance is Tuesday at 15:00. Internal reference LAB-INT-042."
+          },
+          "title": "Synthetic finished draft",
+          "account_email": "fixture@example.invalid"
+        }
+      },
+      {
+        "id": "B-audit-bodies",
+        "type": "audit.http",
+        "additional_fields": {
+          "request_object": {
+            "content": "Service name: Maple Calendar\nMaintenance window: Tuesday, 14:00–14:30 (lab time)\nEmployee action: Save any open calendar edits before 14:00.\nService-desk ticket reference: LAB-INT-042"
+          },
+          "response_object": {
+            "content": "Maple Calendar maintenance is Tuesday at 15:00. Internal reference LAB-INT-042."
+          },
+          "authorization": "SYNTHETIC-AUTH-EXAMPLE"
+        }
+      },
+      {
+        "id": "C-message-metadata-only",
+        "type": "message.created",
+        "additional_fields": {}
+      },
+      {
+        "id": "C-completion-metadata-only",
+        "type": "chat.finished",
+        "additional_fields": {}
+      },
+      {
+        "id": "C-audit-metadata-only",
+        "type": "audit.http",
+        "additional_fields": {}
+      },
+      {
+        "id": "C-denied-metadata-only",
+        "type": "message.created",
+        "approved_changes": {
+          "outcome": "denied"
+        },
+        "additional_fields": {}
+      },
+      {
+        "id": "C-continued-turn",
+        "type": "message.created",
+        "additional_fields": {
+          "data": {
+            "chat_id": "fixture-chat",
+            "role": "user",
+            "model": "fixture-model"
+          }
+        }
+      }
+    ],
+    "rejected_metadata": [
+      {
+        "id": "content-in-allowed-field",
+        "type": "message.created",
+        "replace_fields": {
+          "actor_alias": "LAB-INT-042"
+        },
+        "error": "Metadata does not match the approved policy"
+      },
+      {
+        "id": "unknown-event-type",
+        "type": "message.created",
+        "replace_fields": {
+          "event_type": "fixture.unapproved"
+        },
+        "error": "Unsupported event or action"
+      },
+      {
+        "id": "unapproved-action",
+        "type": "message.created",
+        "replace_fields": {
+          "action": "publish_notice"
+        },
+        "error": "Unsupported event or action"
+      },
+      {
+        "id": "invalid-run-id",
+        "type": "message.created",
+        "replace_fields": {
+          "run_id": "unknown"
+        },
+        "error": "Invalid metadata run ID"
+      },
+      {
+        "id": "missing-approved-field",
+        "type": "message.created",
+        "omit_fields": [
+          "resource_alias"
+        ],
+        "error": "Missing or invalid metadata field: resource_alias"
+      },
+      {
+        "id": "non-string-approved-field",
+        "type": "message.created",
+        "replace_fields": {
+          "actor_alias": {
+            "name": "Synthetic actor"
+          }
+        },
+        "error": "Missing or invalid metadata field: actor_alias"
+      },
+      {
+        "id": "unapproved-outcome",
+        "type": "message.created",
+        "replace_fields": {
+          "outcome": "unexpected"
+        },
+        "error": "Unsupported outcome"
+      }
+    ],
+    "copies": {
+      "start_minute": 0,
+      "unrelated_reader": "other-reader-fixture",
+      "private": {
+        "id": "private-transcript",
+        "reader": "analyst-fixture",
+        "expires_after_minutes": 10
+      },
+      "operational": {
+        "id": "operational-record",
+        "reader": "evidence-reviewer-fixture",
+        "expires_after_minutes": 5
+      },
+      "inventory": [
+        {
+          "minute": 4,
+          "expected_ids": [
+            "private-transcript",
+            "operational-record"
+          ]
+        },
+        {
+          "minute": 5,
+          "expected_ids": [
+            "private-transcript"
+          ]
+        },
+        {
+          "minute": 9,
+          "expected_ids": [
+            "private-transcript"
+          ]
+        },
+        {
+          "minute": 10,
+          "expected_ids": []
+        }
+      ]
+    }
+  }
+}
