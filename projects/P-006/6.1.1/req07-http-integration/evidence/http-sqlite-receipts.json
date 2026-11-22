@@ -1,0 +1,92 @@
+{
+  "evidence_kind": "real HTTP and separate SQLite reads of an isolated synthetic demo",
+  "generated_utc": "2026-11-22T18:59:16.489622+00:00",
+  "model_output_used": "fixed text; no model call",
+  "open_webui_integration": "NOT_TESTED",
+  "python": "3.13.5",
+  "run_id": "287635c7-4f2f-4b7f-85e7-eb0ade931ab5",
+  "scenario_receipts": [
+    {
+      "approval_http_status": 200,
+      "database_approved_revision": 2,
+      "database_preview": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+      "database_ready": 1,
+      "expected": "READY",
+      "http_preview_status": 200,
+      "observed": "READY",
+      "preview": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+      "reason": "approved_employee_facts",
+      "result": "PASS",
+      "variant": "T03-A-wrong-candidate"
+    },
+    {
+      "approval_http_status": 200,
+      "database_approved_revision": 2,
+      "database_preview": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+      "database_ready": 1,
+      "expected": "READY",
+      "http_preview_status": 200,
+      "observed": "READY",
+      "preview": "Maple Calendar maintenance is Tuesday, 14:00–14:30 (lab time). Save any open calendar edits before 14:00.",
+      "reason": "approved_employee_facts",
+      "result": "PASS",
+      "variant": "T03-B-clean-candidate"
+    },
+    {
+      "approval_http_status": 200,
+      "database_approved_revision": 2,
+      "database_preview": null,
+      "database_ready": 0,
+      "expected": "HELD",
+      "http_preview_status": 200,
+      "observed": "HELD",
+      "preview": null,
+      "reason": "audience_not_confirmed",
+      "result": "PASS",
+      "variant": "T03-C-missing-confirmation"
+    },
+    {
+      "approval_http_status": 409,
+      "database_approved_revision": null,
+      "database_preview": null,
+      "database_ready": 0,
+      "expected": "HELD",
+      "http_preview_status": 200,
+      "observed": "HELD",
+      "preview": null,
+      "reason": "approval_mismatch",
+      "result": "PASS",
+      "variant": "T03-D-stale-approval"
+    },
+    {
+      "approval_http_status": 400,
+      "database_approved_revision": null,
+      "database_preview": null,
+      "database_ready": 0,
+      "expected": "HELD",
+      "http_preview_status": 200,
+      "observed": "HELD",
+      "preview": null,
+      "reason": "approval_mismatch",
+      "result": "PASS",
+      "variant": "T03-E-incomplete-facts"
+    },
+    {
+      "approval_http_status": 200,
+      "database_approved_revision": 2,
+      "database_preview": null,
+      "database_ready": 0,
+      "expected": "HELD",
+      "http_preview_status": 200,
+      "observed": "HELD",
+      "preview": null,
+      "reason": "audience_not_confirmed",
+      "result": "PASS",
+      "variant": "T03-F-different-audience"
+    }
+  ],
+  "summary": {
+    "matched": 6,
+    "total": 6
+  }
+}
