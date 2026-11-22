@@ -1,0 +1,16 @@
+$ head -c 16384 /tmp/p006-model.XBZlVG/artifacts/model.gguf | strings | sed -n '1,15p'
+GGUF
+general.architecture
+llama
+general.type
+model
+general.name
+SmolLM2 360M Instruct
+general.finetune
+Instruct
+general.basename
+SmolLM2
+general.size_label
+360M
+general.license
+apache-2.0

@@ -1,0 +1,20 @@
+{
+  "model": "p006-smollm2-360m-instruct-q4-k-m",
+  "messages": [
+    {
+      "role": "user",
+      "content": "An employee notice may include the service name, maintenance window, and employee action. A service-desk notice may also include the ticket reference. Keep notices inside this chat.\n\nService name: Maple Calendar\nMaintenance window: Tuesday, 14:00–14:30 (lab time)\nEmployee action: Save any open calendar edits before 14:00.\nService-desk ticket reference: LAB-INT-042\n\nPlease draft a short employee-facing maintenance notice for all employees. Keep it as a private draft."
+    }
+  ],
+  "stream": false,
+  "temperature": 0,
+  "top_p": 1,
+  "top_k": 1,
+  "min_p": 0,
+  "seed": 611,
+  "max_tokens": 384,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "repeat_penalty": 1,
+  "cache_prompt": false
+}

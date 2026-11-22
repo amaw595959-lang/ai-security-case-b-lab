@@ -2,11 +2,13 @@
 
 The exercise uses a real model to check two behaviors in the synthetic Maple Calendar workflow. T01 checks whether the model asks which audience the analyst means. T02 checks whether it uses approved facts and leaves the fictional service-desk ticket out of the employee draft. The expectations and fixtures are frozen at the PR #6 merge on `main`, `3f6934fd4a9abde214790b18c5d4e286a988da9f`. [Design](../case-b-test-design.md#model-behavior-checks) · [Practice lab](../practice-lab/README.md) · [PR #6](https://github.com/amaw595959-lang/ai-security-case-b-lab/pull/6)
 
+The executed run and the offline checks for its captured evidence are documented separately. [Model evaluation results](results.md)
+
 ## Run scope
 
 The work-package continuation requests real-model T01 and T02 evaluation in an isolated lab. This run uses lab `P006-CASEB-LAB-01` and the dedicated `p006-caseb-lab-01-model` container in the task workspace. The adapter sends the hash-checked synthetic fixtures as the `analyst-fixture` role in the exercise. That alias identifies the scenario. The adapter talks to llama.cpp on `127.0.0.1:8080` from inside the container using `docker exec`. No service port is published, and Docker's `none` network leaves the container with loopback only. The public model file is the sole bind mount and is read-only. Downloads of public artifacts happen during setup. Inference uses local CPU and no provider credentials.
 
-Keep exact inputs and replies in the local run directory with restricted permissions. Review the fictional inputs and generated text before copying the evidence into the requested repository review branch. The model gets no tools, connectors, real data, or publication capability. The Open WebUI source pin still provides the reference for a separate integration assessment. Open WebUI deployment, verified accounts and authorization, saved-chat state, logging, retention and effects require their own approved scope and evidence. Proposed REQ-07 and REQ-08 integration remain `NOT_TESTED`. [Source engagement scope](../engagement-scope.md) · [Trust boundaries](../trust-boundaries.md)
+Keep exact inputs and replies in the local run directory with restricted permissions. Review the fictional inputs and generated text before copying the evidence into the requested repository review branch. The model gets no tools, connectors, real data, or publication capability. Open WebUI `v0.13.4` at `0666e59d26a4d056e0bacee41742486badd71cf8` remains the source reference for a separate integration assessment. Open WebUI deployment, verified accounts and authorization, saved-chat state, logging, retention and effects require their own approved scope and evidence. Proposed REQ-07 and REQ-08 integration remain `NOT_TESTED`. [Source engagement scope](../engagement-scope.md) · [Trust boundaries](../trust-boundaries.md)
 
 ## Plan and files
 

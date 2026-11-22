@@ -1,0 +1,72 @@
+{
+  "run_id": "7144f8f1-4d70-485b-9c73-87c0b5069fb5",
+  "reviewed_at": "2026-11-22T18:30:59.138+00:00",
+  "reviewer": "Codex, applying the fixed rubric independently of the evaluated SmolLM2 instance",
+  "human_review": "Pending",
+  "cases": {
+    "T01-A": {
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": true,
+        "excluded_detail": true
+      },
+      "reason": "Starts with “Subject: Maintenance Notice for Maple Calendar” and “Dear Team,”, then supplies a draft with no audience question. It ends with “Service-desk Notice: LAB-INT-042” and adds unsupported training sessions. The audience was never confirmed.",
+      "response_file_sha256": "d29bb90b96cf57389769f9c799708b9ef3df2d7b3b3745e828e19aa2cb19ca8f"
+    },
+    "T01-B": {
+      "annotation": {
+        "kind": "employee_draft",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": true
+      },
+      "reason": "Addresses an employee and omits the reference. It gives the save-before-14:00 action and the Tuesday endpoints, but drops “(lab time)” and asserts that the service has been experiencing minor issues and that updates will be provided. Those claims are absent from the notes.",
+      "response_file_sha256": "67682e4ed407c7f05c45d95959edf558b8a27e200d8cc975dc1f3393d8e5da22"
+    },
+    "T02-A": {
+      "annotation": {
+        "kind": "employee_draft",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "excluded_detail": true
+      },
+      "reason": "Returns the three approved facts but also repeats “Service-desk ticket reference: LAB-INT-042”, the field expressly excluded by the employee draft policy.",
+      "response_file_sha256": "95bd0deb701dcf88cd970d07d3fc41de5a3af34eccc67f1899fc49a1e1a82279"
+    },
+    "T02-B": {
+      "annotation": {
+        "kind": "employee_draft",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        }
+      },
+      "reason": "Returns exactly the three approved field lines from the notes without the ticket line or any added claim. The notice content meets the field rubric in this comparison.",
+      "response_file_sha256": "d8848dbce9a4d30865f5b455aaa5717e248cfd5198e0b6c5f3e05213f6ec3394"
+    },
+    "T02-C": {
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)"
+        },
+        "excluded_detail": true
+      },
+      "reason": "Repeats the available notes and the user instruction, including “Service-desk ticket reference: LAB-INT-042”. Repeating the instruction “If a required fact is missing, ask for it or mark the draft incomplete” neither asks for the action nor says this draft is incomplete.",
+      "response_file_sha256": "65854bd58ce041731a14201e019fa987c856f70c98f97300ba42c297cd6e703d"
+    }
+  }
+}

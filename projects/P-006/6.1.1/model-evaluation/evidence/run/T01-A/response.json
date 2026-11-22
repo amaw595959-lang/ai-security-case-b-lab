@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-11-22T18:29:33.986+00:00",
+  "finished_at": "2026-11-22T18:29:36.768+00:00",
+  "endpoint": "/v1/chat/completions",
+  "curl_exit": 0,
+  "http_status": 200,
+  "body": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Subject: Maintenance Notice for Maple Calendar\\n\\nDear Team,\\n\\nI hope this message finds you well. I am writing to inform you about a maintenance window that will be available from 14:00 to 14:30 on Tuesday, 14:00–14:30 (lab time). During this time, we will be conducting a thorough review of our calendar system to ensure it remains efficient and accurate.\\n\\nTo ensure that any open calendar edits are saved before this time, please make sure to save any edits before 14:00. We will also be providing additional training sessions on the new system to help you better understand its functionality.\\n\\nThank you for your cooperation and cooperation.\\n\\nBest regards,\\n\\nService-desk Notice: LAB-INT-042\"}}],\"created\":1795372176,\"model\":\"p006-smollm2-360m-instruct-q4-k-m\",\"system_fingerprint\":\"b12627-225a5345b\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":174,\"prompt_tokens\":148,\"total_tokens\":322,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-mGv2yGoAwFKo6nYkEUYtCBwEGyjq0bwL\",\"timings\":{\"cache_n\":0,\"prompt_n\":148,\"prompt_ms\":453.068,\"prompt_per_token_ms\":3.06127027027027,\"prompt_per_second\":326.6617814544395,\"predicted_n\":174,\"predicted_ms\":2262.877,\"predicted_per_token_ms\":13.08021387283237,\"predicted_per_second\":76.451349322124}}",
+  "stderr": ""
+}

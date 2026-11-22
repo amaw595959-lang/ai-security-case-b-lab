@@ -1,0 +1,9 @@
+{
+  "run_id": "7144f8f1-4d70-485b-9c73-87c0b5069fb5",
+  "attempt_id": "e6c65cf2-7344-488f-9e84-4a7edfdeb01c",
+  "case": "T02-C",
+  "conversation": "T02-C",
+  "actor": "analyst-fixture",
+  "created_at": "2026-11-22T18:29:41.369+00:00",
+  "request_sha256": "4fb6858acdbf1365d7085a7fa581473bf5fcb97991797ddec12233ac53b80906"
+}
