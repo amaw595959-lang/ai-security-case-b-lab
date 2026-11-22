@@ -45,7 +45,7 @@
 - **Adversarial counterpart:** Introduce an attacker-controlled instruction or data source only after the legitimate failure path is understood.
 - **Control, evidence and retest:** Map assets, actors, model boundaries and policy-owned enforcement; independently check source, expected outcomes and receipts.
 
-- [ ] **6.1.1** — Enterprise application requirements, assets, roles and security objectives — `P-006`
+- [x] **6.1.1** — Enterprise application requirements, assets, roles and security objectives — `P-006`
 - [ ] **6.1.2** — Reference architecture, component inventory and data-flow design — `P-006`
 - [ ] **6.1.3** — LLM API integration, orchestration and secure defaults — `P-006`
 - [ ] **6.1.4** — Authentication, authorization, secrets and application trust boundaries — `P-006`
@@ -53,6 +53,8 @@
 - [ ] **6.1.6** — Automated application, route, endpoint and service discovery — `P-004`
 - [ ] **6.1.7** — API, model, tool, connector and identity attack-surface mapping — `P-004`
 - [ ] **6.1.8** — Discovery accuracy, configuration drift and architecture verification — `P-004, P-006`
+
+**6.1.1 status (2026-11-22): Design-stage complete only.** [Evidence-based closure record](../projects/P-006/6.1.1/closure-report.md). The source-grounded requirements, asset/identity/permission model, trust boundaries and planned scenarios are documented. A pinned standalone SmolLM2 model run recorded B-04/B-05 behavior failures; a separate toy HTTP/SQLite REQ-07 backend demo passed bounded tests. Open WebUI runtime/model/API integration, REQ-08 actual sink/retention enforcement, learner human sign-off and independent unfamiliar-target transfer remain NOT_TESTED or PENDING. Do not read this checked item as verified deployment security or completion of other 6.1 IDs.
 
 ### 6.2 — LLM Instruction & Output Security
 
