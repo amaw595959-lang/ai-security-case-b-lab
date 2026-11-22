@@ -1,0 +1,13 @@
+{
+  "run_id": "c8f4fca4-2307-46ea-aaa6-adf4c1837972",
+  "created_at": "2026-11-22T19:49:41.602+00:00",
+  "base_commit": "2ff31d5cb49a7b12bb95b692de748d12745914eb",
+  "runner_commit": "b30b0338af8aef6814d046bba5eecb6889c72d9b",
+  "plan_sha256": "71067042f77daf6044cd035d1960ced9c0e8135ab9ca6bcb13229adaac4c8be1",
+  "code_sha256": {
+    "study.py": "2f58043aea97a19900acb0cc2df4bad6456ffb3d0d61fcfa68e349c15dac9512",
+    "adjudicate.py": "452328bfe4650264b17f266c84b52e565a5f195388056ce79b9fbde9468bec7c"
+  },
+  "python": "3.12.14",
+  "machine": "x86_64"
+}

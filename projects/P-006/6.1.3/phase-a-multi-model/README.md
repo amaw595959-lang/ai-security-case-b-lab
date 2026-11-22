@@ -2,6 +2,8 @@
 
 This experiment continues the model provenance and repeatability work under **6.1.3 — LLM API integration, orchestration and secure defaults**. The design and frozen ground truth come from closed 6.1.1. Evaluation methods also support the curriculum's 3.1.1 and 3.1.5 objectives. [6.1.1 closure](../../6.1.1/closure-report.md) · [Canonical work packages](../../../../strategy/334-subsublayers.md#61--ai-application-foundations)
 
+The comparison, execution transcripts and independent verification commands are available in the run report. [Phase A report](report.md)
+
 ## Scope and architecture
 
 Lab `P006-CASEB-LAB-01`. The Phase A request authorizes running the fictional T01 and T02 notice workflow on isolated local model containers. The only test identity is the synthetic analyst. The adapter submits the hash-checked policy, Maple Calendar notes and requests. The synthetic ticket is included only on the fixture rows that permit it. `docker exec` calls a loopback-only llama.cpp route from inside a Docker `none` network. There are no published ports, provider keys, tools, or external inference. The public weights are the only bind mount, mounted read-only. Setup uses normal public registry downloads. Evidence is saved by the operator in a private work directory, then reviewed for release in this laboratory's review branch. [Frozen test design](../../6.1.1/case-b-test-design.md) · [Laboratory scope](../../6.1.1/engagement-scope.md)

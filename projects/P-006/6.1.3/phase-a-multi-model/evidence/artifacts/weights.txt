@@ -1,0 +1,36 @@
+$ head -c 16384 /tmp/p006-model.XBZlVG/artifacts/model.gguf | strings | sed -n '1,15p'
+GGUF
+general.architecture
+llama
+general.type
+model
+general.name
+SmolLM2 360M Instruct
+general.finetune
+Instruct
+general.basename
+SmolLM2
+general.size_label
+360M
+general.license
+apache-2.0
+$ sha256sum /tmp/p006-model.XBZlVG/artifacts/model.gguf
+bf6f20a603055433b4b998119e17928fc4a89b35c42855dd7eada105058cae0a  /tmp/p006-model.XBZlVG/artifacts/model.gguf
+$ head -c 16384 /tmp/p006-phase-a.Mzlsj8/artifacts-qwen2.5/model.gguf | strings | sed -n '1,15p'
+GGUF
+general.architecture
+qwen2
+general.type
+model
+general.name
+Qwen2.5 0.5B Instruct
+general.finetune
+Instruct
+general.basename
+Qwen2.5
+general.size_label
+0.5B
+general.license
+apache-2.0
+$ sha256sum /tmp/p006-phase-a.Mzlsj8/artifacts-qwen2.5/model.gguf
+f1ad9d1174ce6ab47b584d522634c47e411b75bffdffd9a4e106e21e882392e5  /tmp/p006-phase-a.Mzlsj8/artifacts-qwen2.5/model.gguf

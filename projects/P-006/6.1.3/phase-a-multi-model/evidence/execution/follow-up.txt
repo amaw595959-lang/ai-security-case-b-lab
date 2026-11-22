@@ -1,0 +1,4 @@
+$ python3.12 -Bu study.py follow-up /tmp/p006-phase-a.Mzlsj8/run smollm2 /tmp/p006-model.XBZlVG/artifacts /tmp/p006-phase-a.Mzlsj8/gate-review.json
+SmolLM2 follow-up exit status: 0
+$ python3.12 -Bu study.py follow-up /tmp/p006-phase-a.Mzlsj8/run qwen2.5 /tmp/p006-phase-a.Mzlsj8/artifacts-qwen2.5 /tmp/p006-phase-a.Mzlsj8/gate-review.json
+Qwen2.5 follow-up exit status: 0

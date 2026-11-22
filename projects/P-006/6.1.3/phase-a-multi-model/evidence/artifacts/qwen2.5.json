@@ -1,0 +1,47 @@
+{
+  "registry": "https://registry-1.docker.io",
+  "repository": "ai/qwen2.5",
+  "manifest_digest": "sha256:3e1aad67b4cc8e3dca660fe65f9f73edb598474284256ffdd9ba460b5b35ff26",
+  "manifest": {
+    "schemaVersion": 2,
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "config": {
+      "mediaType": "application/vnd.docker.ai.model.config.v0.1+json",
+      "size": 364,
+      "digest": "sha256:f038cce14f63420473d8034f1e9cad9dd6be44fc2157b3112b30245c4da6f29f"
+    },
+    "layers": [
+      {
+        "mediaType": "application/vnd.docker.ai.gguf.v3",
+        "size": 994156864,
+        "digest": "sha256:f1ad9d1174ce6ab47b584d522634c47e411b75bffdffd9a4e106e21e882392e5"
+      },
+      {
+        "mediaType": "application/vnd.docker.ai.license",
+        "size": 12624,
+        "digest": "sha256:609e2cb599f84aaa41d8ef29d8fdb04d164fab22e8d9292ca34a599d0f56a338"
+      }
+    ]
+  },
+  "config": {
+    "config": {
+      "format": "gguf",
+      "quantization": "F16",
+      "parameters": "494.03 M",
+      "architecture": "qwen2",
+      "size": "942.43 MiB"
+    },
+    "descriptor": {
+      "created": "2025-04-08T15:17:06.415647+02:00"
+    },
+    "rootfs": {
+      "type": "rootfs",
+      "diff_ids": [
+        "sha256:f1ad9d1174ce6ab47b584d522634c47e411b75bffdffd9a4e106e21e882392e5",
+        "sha256:609e2cb599f84aaa41d8ef29d8fdb04d164fab22e8d9292ca34a599d0f56a338"
+      ]
+    }
+  },
+  "weights_sha256": "f1ad9d1174ce6ab47b584d522634c47e411b75bffdffd9a4e106e21e882392e5",
+  "weights_bytes": 994156864
+}

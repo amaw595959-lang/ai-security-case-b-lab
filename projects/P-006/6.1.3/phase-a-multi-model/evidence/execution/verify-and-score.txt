@@ -1,0 +1,4 @@
+$ python3.12 -B verify.py evidence/run
+Verified 110 request records, 106 complete replies, 22 dispositions and the frozen schedule.
+$ python3.12 -B adjudicate.py score evidence/run evidence/review.json | diff -u evidence/results.json -
+Ledger verification and scorer replay exit status: 0

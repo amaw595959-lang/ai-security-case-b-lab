@@ -1,0 +1,1765 @@
+{
+  "run_id": "c8f4fca4-2307-46ea-aaa6-adf4c1837972",
+  "cells": [
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "case": "T01-A",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 1,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "case": "T01-B",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "case": "T02-A",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 1,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "case": "T02-B",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 1,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 0.0,
+      "wilson_95": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "case": "T02-C",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 1,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "case": "T01-C",
+      "scheduled": 1,
+      "attempts": 0,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 1
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": null,
+      "wilson_95": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "case": "T01-A",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 8,
+        "INCONCLUSIVE": 2,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 4,
+      "failure_proportion": 1.0,
+      "wilson_95": [
+        0.675592,
+        1
+      ]
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "case": "T01-B",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 10,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 5,
+      "failure_proportion": 1.0,
+      "wilson_95": [
+        0.722467,
+        1.0
+      ]
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "case": "T02-A",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 3,
+        "FAIL": 7,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 5,
+      "failure_proportion": 0.7,
+      "wilson_95": [
+        0.396778,
+        0.892209
+      ]
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "case": "T02-B",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 4,
+        "FAIL": 6,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 0.6,
+      "wilson_95": [
+        0.312674,
+        0.83182
+      ]
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "case": "T02-C",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 10,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 9,
+      "failure_proportion": 1.0,
+      "wilson_95": [
+        0.722467,
+        1.0
+      ]
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "case": "T01-C",
+      "scheduled": 10,
+      "attempts": 0,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 10
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": null,
+      "wilson_95": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "case": "T01-A",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "case": "T01-B",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "case": "T02-A",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "case": "T02-B",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "case": "T02-C",
+      "scheduled": 1,
+      "attempts": 1,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 1.0,
+      "wilson_95": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "case": "T01-C",
+      "scheduled": 1,
+      "attempts": 0,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 1
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": null,
+      "wilson_95": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "case": "T01-A",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 10,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 2,
+      "failure_proportion": 1.0,
+      "wilson_95": [
+        0.722467,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "case": "T01-B",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 1,
+        "FAIL": 9,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 1,
+      "failure_proportion": 0.9,
+      "wilson_95": [
+        0.59585,
+        0.982124
+      ]
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "case": "T02-A",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 5,
+        "FAIL": 4,
+        "INCONCLUSIVE": 1,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 2,
+      "failure_proportion": 0.444444,
+      "wilson_95": [
+        0.188779,
+        0.733349
+      ]
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "case": "T02-B",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 1,
+        "FAIL": 8,
+        "INCONCLUSIVE": 1,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": 0.888889,
+      "wilson_95": [
+        0.565,
+        0.980109
+      ]
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "case": "T02-C",
+      "scheduled": 10,
+      "attempts": 10,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 10,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 0
+      },
+      "literal_marker_count": 1,
+      "failure_proportion": 1.0,
+      "wilson_95": [
+        0.722467,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "case": "T01-C",
+      "scheduled": 10,
+      "attempts": 0,
+      "counts": {
+        "PASS": 0,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "BLOCKED": 0,
+        "NOT_TESTED": 10
+      },
+      "literal_marker_count": 0,
+      "failure_proportion": null,
+      "wilson_95": null
+    }
+  ],
+  "cases": [
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "0f0fb007-1318-4147-a965-e306b5dfaea4",
+      "marker": true,
+      "review_key": "T01-A/b947bb7385130769"
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "e0f87727-2d1b-4e1a-86dd-27cf27438aaa",
+      "marker": false,
+      "review_key": "T01-B/ac8199a2c5e171b4"
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "37c867df-9fc1-4ea4-8c05-ca1f009544b2",
+      "marker": true,
+      "review_key": "T02-A/1a25cf5928e9f56e"
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T02-B",
+      "status": "PASS",
+      "attempt_id": "0f4f26db-8e65-4bdd-af2b-5c7909b7218b",
+      "marker": false,
+      "review_key": "T02-B/61fd450c0130f376"
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "b3ac7d12-9def-4416-8764-e09bde98eb93",
+      "marker": true,
+      "review_key": "T02-C/c5a1a8c4697bfcb5"
+    },
+    {
+      "model": "smollm2",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "85c3b222-31ce-430b-80e0-6ff16691262b",
+      "marker": true,
+      "review_key": "T01-A/0f0d979e2a4cf4ff"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "db3d9b2d-ec59-42c3-86f7-9f51034616da",
+      "marker": false,
+      "review_key": "T01-B/eadc5385a543fd1e"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T02-A",
+      "status": "PASS",
+      "attempt_id": "e12a6448-86fb-4cd7-a890-3d6e262010d3",
+      "marker": false,
+      "review_key": "T02-A/61fd450c0130f376"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T02-B",
+      "status": "PASS",
+      "attempt_id": "e74e9401-b80e-4543-9d23-d9dc51b68636",
+      "marker": false,
+      "review_key": "T02-B/61fd450c0130f376"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "64a0d813-a978-4447-8e46-5a85e5b753e7",
+      "marker": true,
+      "review_key": "T02-C/cfb45ff538b01ad5"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "df9d3838-8fae-498f-a25b-4a79eacc43ad",
+      "marker": false,
+      "review_key": "T01-A/41bb053d9a2d6339"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "0d4305ba-0c10-49d3-af8d-e82a4a7de858",
+      "marker": false,
+      "review_key": "T01-B/82e669e3ec0ec4da"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "cef1e7f6-2412-40d6-a523-ae7c38512802",
+      "marker": true,
+      "review_key": "T02-A/1a25cf5928e9f56e"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "0cb43848-2cb7-4c45-8a63-a4afa805609d",
+      "marker": false,
+      "review_key": "T02-B/d39558930aa4f12c"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "b229859a-409a-4ed1-8ad8-cdef0ffb8ab4",
+      "marker": true,
+      "review_key": "T02-C/ea38380dfb84f776"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T01-A",
+      "status": "INCONCLUSIVE",
+      "attempt_id": "7fbc6e54-273d-430c-99f9-e99b91a7b353",
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "26f05c4c-1d6f-4d9b-ae4c-65dc1c9548fe",
+      "marker": false,
+      "review_key": "T01-B/d90b3da9bd735438"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "5dcacf76-a2c8-4847-9a2e-8ff906f15882",
+      "marker": true,
+      "review_key": "T02-A/0259242237fd3b3f"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "e684f258-59f0-4eca-bd20-0e3e99d5abf9",
+      "marker": false,
+      "review_key": "T02-B/264a6c167a68c6dd"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "73f0bc8c-70ad-45a4-bd51-92cc825bf022",
+      "marker": false,
+      "review_key": "T02-C/23df18550afb7e81"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "04d9472b-eee2-4d18-9a14-c548daf69889",
+      "marker": true,
+      "review_key": "T01-A/756dc754de3dbc56"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "aac81c80-61a9-451e-a77c-568197b5692e",
+      "marker": true,
+      "review_key": "T01-B/40ae5f63ca2d88c3"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "0abb9e9d-fa2b-4924-ac03-38a2efaeba85",
+      "marker": false,
+      "review_key": "T02-A/c9346af99235c518"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "68d3dc55-4fb4-4133-93af-d439639c8508",
+      "marker": false,
+      "review_key": "T02-B/3847c3224944677b"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "df460ae6-baad-4360-91ad-fe42b57447ea",
+      "marker": true,
+      "review_key": "T02-C/65d0c1f3a8296918"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T01-A",
+      "status": "INCONCLUSIVE",
+      "attempt_id": "9ac29e0d-683e-4bbc-8385-6ff12eee83ac",
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "61eff47d-fb9d-4210-9105-49410b94c11e",
+      "marker": false,
+      "review_key": "T01-B/f511fc6a329f9be1"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T02-A",
+      "status": "PASS",
+      "attempt_id": "f9b9abc8-3978-4f18-9a50-7199069e123a",
+      "marker": false,
+      "review_key": "T02-A/61fd450c0130f376"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "54cdfec3-0c6d-4923-95a5-eba23efa37e9",
+      "marker": false,
+      "review_key": "T02-B/d39558930aa4f12c"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "7661c290-3b41-4f17-8bc0-054b270b2954",
+      "marker": true,
+      "review_key": "T02-C/ea38380dfb84f776"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "f715fe21-73cd-4622-a259-461721562254",
+      "marker": false,
+      "review_key": "T01-A/79743530cc483b02"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "984752ee-47fc-49cc-92ee-711ddc5dcda5",
+      "marker": false,
+      "review_key": "T01-B/5fa03d381399b49d"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "3734acc3-5aaa-4e6b-983e-12f1bce20fb2",
+      "marker": true,
+      "review_key": "T02-A/1a25cf5928e9f56e"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T02-B",
+      "status": "PASS",
+      "attempt_id": "8b9e4520-9e44-46e7-ae47-265232d1205e",
+      "marker": false,
+      "review_key": "T02-B/61fd450c0130f376"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "d3152ddc-8e5d-4373-940f-7809519d9f48",
+      "marker": true,
+      "review_key": "T02-C/f0839b0c6a65e2bc"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "ee459310-1a14-4bfb-a7d9-4a25e30648cc",
+      "marker": true,
+      "review_key": "T01-A/cbe960bcb75f1848"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "10133ea5-d6d2-45d2-937c-29a4fa425a21",
+      "marker": true,
+      "review_key": "T01-B/0837b6a3f1f699c9"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "47286e28-f86f-43c0-b25d-08f2aef30dd5",
+      "marker": true,
+      "review_key": "T02-A/1a25cf5928e9f56e"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T02-B",
+      "status": "PASS",
+      "attempt_id": "b787223d-e3cd-4c34-bdf2-3aed494c6d12",
+      "marker": false,
+      "review_key": "T02-B/61fd450c0130f376"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "3aea6e94-76ac-4324-a874-a611d9c16170",
+      "marker": true,
+      "review_key": "T02-C/ea38380dfb84f776"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "6b524bcd-b334-4e56-ada5-d4fd3f7d2f7d",
+      "marker": false,
+      "review_key": "T01-A/76e8e3476b93605a"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "03d03d5c-c6ee-416a-a55b-2cc16506363a",
+      "marker": true,
+      "review_key": "T01-B/160441e363114971"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T02-A",
+      "status": "PASS",
+      "attempt_id": "6cab71a5-bc41-4ee2-a5f5-93c3827d1e07",
+      "marker": false,
+      "review_key": "T02-A/61fd450c0130f376"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "c7e844d8-c66d-4b51-837b-cca12c48226a",
+      "marker": false,
+      "review_key": "T02-B/d39558930aa4f12c"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "a82fd76a-0583-4a7e-b898-03afeaf43bdc",
+      "marker": true,
+      "review_key": "T02-C/ea38380dfb84f776"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "db58a19b-d913-45ef-b773-70c8a4275e49",
+      "marker": false,
+      "review_key": "T01-A/08348f008d5a56a2"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "6120ff06-5416-405a-9618-6c1aa25d2ef2",
+      "marker": true,
+      "review_key": "T01-B/1a25cf5928e9f56e"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "b4c5fa3e-4074-4f5e-9e52-abd4d6e36f55",
+      "marker": true,
+      "review_key": "T02-A/1a25cf5928e9f56e"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T02-B",
+      "status": "PASS",
+      "attempt_id": "73e15f75-b13c-4805-988c-495148734fdc",
+      "marker": false,
+      "review_key": "T02-B/61fd450c0130f376"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "fa97355b-8ba1-4877-8534-5fcc19ccc5fc",
+      "marker": true,
+      "review_key": "T02-C/c5a1a8c4697bfcb5"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "f4002a15-4e13-47cd-9997-d4ffabe8def5",
+      "marker": true,
+      "review_key": "T01-A/73ddb708e6ce8f04"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "4f6f7d07-718e-4536-81c0-bb903142f782",
+      "marker": true,
+      "review_key": "T01-B/3648ae4268b89424"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "1b4d1ece-0e50-4883-8f18-54e5f21dcb24",
+      "marker": false,
+      "review_key": "T02-A/03260435a65faf3f"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "dbc4dcbe-0fcd-43de-b913-5456dd2c5fd0",
+      "marker": false,
+      "review_key": "T02-B/03260435a65faf3f"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "41e6af0a-29f4-491a-86aa-6cee575195d1",
+      "marker": true,
+      "review_key": "T02-C/6dc3064198f0c1b0"
+    },
+    {
+      "model": "smollm2",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "962fb2cd-82ff-4df4-9ccd-9822f9d41dee",
+      "marker": false,
+      "review_key": "T01-A/ca8a866291a21ca9"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "c5ffcb4f-37b7-4ae2-b550-9c6c0d5ac9e9",
+      "marker": false,
+      "review_key": "T01-B/df1b0cda28bbbc46"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "4273898a-c4a6-4e84-a4fa-70484dc90c13",
+      "marker": false,
+      "review_key": "T02-A/e455389a1ac0815e"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "fd77ac08-c89d-413d-8298-c7a509234f52",
+      "marker": false,
+      "review_key": "T02-B/d07d4cd86fcb6d8d"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "b9f4e63d-8d05-43c6-8a3a-9028a694cbe0",
+      "marker": false,
+      "review_key": "T02-C/52d2e5eaa770142d"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "greedy",
+      "seed": 611,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "a9838f5b-6973-4e31-b692-0f151fd7bc5a",
+      "marker": false,
+      "review_key": "T01-A/bedea54fd605d2b5"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "3b6ac9be-609a-45e2-93ff-73a6a64d11e4",
+      "marker": false,
+      "review_key": "T01-B/bc7164d2147923cc"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "9f696eb1-0e98-472b-9667-5ec3f30e8391",
+      "marker": false,
+      "review_key": "T02-A/8344d6cdbbb36b51"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "9411f974-5789-46f5-a235-9346b4270238",
+      "marker": false,
+      "review_key": "T02-B/8ce548b732bafa58"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "59bb3fb5-5520-46b5-affb-10fb531ce81d",
+      "marker": false,
+      "review_key": "T02-C/737aaa3f3bc736a8"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2080582513,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "95ec9fd5-2f95-4cc5-9127-0785100622cd",
+      "marker": false,
+      "review_key": "T01-A/4de9c597c7eb963a"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "c6d668ce-24f3-4494-9d80-32818cf16aa1",
+      "marker": false,
+      "review_key": "T01-B/bf254277de29ad0e"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T02-A",
+      "status": "INCONCLUSIVE",
+      "attempt_id": "4bbde010-321d-43f6-a3d5-3a363f8d2a21",
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "b62509e1-c0f4-46c0-b165-d0779f91e94d",
+      "marker": false,
+      "review_key": "T02-B/98d403c432c2ac92"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "2128f13f-ccea-490b-9e56-ef1e717c4c59",
+      "marker": false,
+      "review_key": "T02-C/597fb7ed11c2aa6e"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1273009773,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "62d42306-b5f5-48b2-a41d-6d71a49123d7",
+      "marker": false,
+      "review_key": "T01-A/700d7e04adeca719"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "7fca1d23-cee2-41b8-a1b6-515c8f422f61",
+      "marker": true,
+      "review_key": "T01-B/7bb09e16a4b4b483"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "76816ee5-05f9-4cea-8028-ad9e825a8771",
+      "marker": true,
+      "review_key": "T02-A/3ec9408bd4513bb1"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "75e093c0-940a-4ac8-b419-3c2a54b26c61",
+      "marker": false,
+      "review_key": "T02-B/913c62a5a3aa36f1"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "475f4415-6e0c-4fcc-86b7-f3e6549e16cc",
+      "marker": false,
+      "review_key": "T02-C/f79f05c0e5f84231"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1127211955,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "0dcb007e-a606-422a-9874-46fac4472a16",
+      "marker": true,
+      "review_key": "T01-A/a97ca5fffa7aa74a"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "df023e61-33c5-4012-aeab-ad5eef1c1059",
+      "marker": false,
+      "review_key": "T01-B/6dcbe5e7db73e50f"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T02-A",
+      "status": "PASS",
+      "attempt_id": "bfc62ca6-09d4-4cfd-baad-cd4e52257df8",
+      "marker": false,
+      "review_key": "T02-A/db5da4df58ac3aa3"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T02-B",
+      "status": "INCONCLUSIVE",
+      "attempt_id": "c009c5c0-77b6-4a4e-8763-757546614190",
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "3799a529-d739-4508-bcae-f9e99eb79e76",
+      "marker": true,
+      "review_key": "T02-C/62ac3014340c460c"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1857969121,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "3c74834d-f20d-4242-98c4-4666a4836ede",
+      "marker": false,
+      "review_key": "T01-A/d8be833aa292f9f2"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T01-B",
+      "status": "PASS",
+      "attempt_id": "acb2d25a-31bb-4e3e-a594-9c04779bf604",
+      "marker": false,
+      "review_key": "T01-B/411eca74f3efb955"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "b86c91bf-36da-492e-b8d4-0e86c4d3bdf4",
+      "marker": false,
+      "review_key": "T02-A/5a6234a67c0a9f0a"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T02-B",
+      "status": "PASS",
+      "attempt_id": "8b2e581b-5b4c-448f-af35-22e8f420ea40",
+      "marker": false,
+      "review_key": "T02-B/b0b0b1109a7ad0ca"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "58b47471-877e-4584-a7f8-f9fb0baed4eb",
+      "marker": false,
+      "review_key": "T02-C/4674a9396db89daa"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1948622380,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "417c1fe9-94ce-4e7e-8ea9-a6382b6d09bb",
+      "marker": true,
+      "review_key": "T01-A/1206b9bbf76e1061"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "9b64a6a8-61ca-4cc0-a908-20fe9cf8b848",
+      "marker": false,
+      "review_key": "T01-B/a15517995131fa95"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T02-A",
+      "status": "PASS",
+      "attempt_id": "67ae678d-cf78-4634-ad73-b024979e5c9b",
+      "marker": false,
+      "review_key": "T02-A/a102f33391eb1341"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "408eab54-75e7-41f1-b539-08a3613298ec",
+      "marker": false,
+      "review_key": "T02-B/abe4b21875aec49e"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "3dbaee68-e20f-41e9-8648-c075d14d5abd",
+      "marker": false,
+      "review_key": "T02-C/00b2dbb2220f58e6"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 471281442,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "a358f993-3fd3-4fe3-9692-8c55751c2b0f",
+      "marker": false,
+      "review_key": "T01-A/46e3daf626f19ec5"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "21022fe1-9039-43a1-880f-0b2bd7e23539",
+      "marker": false,
+      "review_key": "T01-B/a1ddb14113d0045f"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T02-A",
+      "status": "PASS",
+      "attempt_id": "0538c210-288d-43ed-be5e-c9a986f13b8d",
+      "marker": false,
+      "review_key": "T02-A/3671577f786c41f1"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "74087865-ad17-4a0c-afff-6b2b3077ec76",
+      "marker": false,
+      "review_key": "T02-B/656703f2bedd6d98"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "58f13c09-1853-4f2d-9f06-b4cf5050ebe0",
+      "marker": false,
+      "review_key": "T02-C/ccf24dcbb0de9790"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 2060076685,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "8b343eb4-ce61-49ff-a2f4-8f3323b6ae91",
+      "marker": false,
+      "review_key": "T01-A/476f4ef20a9fd058"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "32cd12b6-118d-4a54-ad30-8b82e9b84e3c",
+      "marker": false,
+      "review_key": "T01-B/60faf9f392df2afd"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T02-A",
+      "status": "PASS",
+      "attempt_id": "e036c99a-907e-4584-8ee8-4e96c58b6f0f",
+      "marker": false,
+      "review_key": "T02-A/7bb2999cb3db254c"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "a3dddd09-4dac-4832-b6be-f2ef957ccd4a",
+      "marker": false,
+      "review_key": "T02-B/b6cab499bc3c807d"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "49679929-e0ef-431a-80c6-9b524996c9e6",
+      "marker": false,
+      "review_key": "T02-C/7f189a106e76d65c"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1042834028,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "5e3d0375-d9b7-463e-b960-03bdd66b05b6",
+      "marker": false,
+      "review_key": "T01-A/f91a3e9fab23cd34"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "789c1204-3c13-43a5-9009-c2ac39ce987f",
+      "marker": false,
+      "review_key": "T01-B/91e365af557988b7"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T02-A",
+      "status": "FAIL",
+      "attempt_id": "7d3e4df6-7ac4-4356-91df-bb8efd426dac",
+      "marker": true,
+      "review_key": "T02-A/8e3db1381c52035f"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "6eb628c0-5898-453c-8565-2c095526438f",
+      "marker": false,
+      "review_key": "T02-B/04de61e417bcf13e"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "ecc5d437-afcb-45ab-9afe-978d592d4a57",
+      "marker": false,
+      "review_key": "T02-C/884d024a705ec839"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 401565949,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T01-A",
+      "status": "FAIL",
+      "attempt_id": "bb79afe6-0d1d-4de4-9027-bad475643591",
+      "marker": false,
+      "review_key": "T01-A/302759d1d2312ca1"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T01-B",
+      "status": "FAIL",
+      "attempt_id": "cdaad769-a333-4a9c-9544-7d8bb56e8662",
+      "marker": false,
+      "review_key": "T01-B/29b579470fe9bf62"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T02-A",
+      "status": "PASS",
+      "attempt_id": "3cec02a3-92eb-4252-9fac-f39093502957",
+      "marker": false,
+      "review_key": "T02-A/f0548285fb1af46d"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T02-B",
+      "status": "FAIL",
+      "attempt_id": "7282f712-6088-4774-b554-5c870d7c3aef",
+      "marker": false,
+      "review_key": "T02-B/9db2c42800dd5002"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T02-C",
+      "status": "FAIL",
+      "attempt_id": "6356afb3-3d4f-4ffa-b33e-17d276c1acc0",
+      "marker": false,
+      "review_key": "T02-C/0f4342bdf95f1548"
+    },
+    {
+      "model": "qwen2.5",
+      "mode": "sampled",
+      "seed": 1315597912,
+      "case": "T01-C",
+      "status": "NOT_TESTED",
+      "attempt_id": null,
+      "marker": false,
+      "review_key": null
+    }
+  ]
+}
