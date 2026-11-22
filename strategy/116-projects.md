@@ -1,0 +1,122 @@
+# Canonical 116 AI Security Assessment Projects
+
+**Source:** Extracted without changing project IDs or titles from `strategy/334-subsublayers.md` (`AI_Security_334_SubSublayers_Full_Final_Case_B_2026.md`). The source repeats some titles across sublayer mappings; each project appears once in this deduplicated index.
+
+**Scope:** P-001–P-116 are canonical assessment project identifiers, distinct from the separate 160-item external tool/reference catalog.
+
+- **P-001** — Reproducible Cloud-Native AI Security Laboratory and Infrastructure-as-Code Platform
+- **P-002** — Synthetic Enterprise Data, Users, Assets, and Attack Scenario Generator
+- **P-003** — AI Security Engagement Scoping, Authorization, and Rules-of-Engagement Toolkit
+- **P-004** — Automated AI Application Architecture Discovery and Attack Surface Mapping
+- **P-005** — AI Threat Modeling-as-Code and Trust Boundary Analysis System
+- **P-006** — Secure-by-Default LLM Application Reference Architecture
+- **P-007** — AI Security Control Regression Testing and Evidence Reproduction Framework
+- **P-008** — AI Security Evaluation Datasets and Regression Testing Pipeline
+- **P-009** — Security Evidence Collection, Telemetry, and Reproducibility Platform
+- **P-010** — AI Security Findings, Risk Register, and Consultancy Report Generator
+- **P-011** — Cloud AI Workload Identity Federation and Token Exchange Security Assessment
+- **P-012** — OAuth Delegation, Consent, and Scope Abuse in Enterprise AI Agents
+- **P-013** — Service Account Impersonation and Privilege Escalation in AI Workloads
+- **P-014** — AI Agent Confused-Deputy Attack and Authorization Boundary Assessment
+- **P-015** — Human-in-the-Loop Approval Integrity, Replay, and Transaction Binding
+- **P-016** — Just-in-Time Privileged Access and Least-Privilege Enforcement for AI Agents
+- **P-017** — Multi-Tenant AI API Broken Object-Level Authorization Assessment
+- **P-018** — AI Session Identity, Context Switching, and Authorization State Integrity
+- **P-019** — AI Secrets Management, Credential Rotation, and Vault Integration Security
+- **P-020** — Cross-Cloud AI Workload Trust Relationships and Privilege Path Analysis
+- **P-021** — Direct Prompt Injection and System Instruction Boundary Testing
+- **P-022** — Indirect Prompt Injection Through Retrieved Enterprise Documents
+- **P-023** — Browser-Based AI Agent Webpage Content Manipulation
+- **P-024** — External API and Tool-Response Prompt Injection Assessment
+- **P-025** — Image-Based Multimodal Prompt Injection Security Laboratory
+- **P-026** — Audio and Speech-Based Instruction Injection Assessment
+- **P-027** — Video Frame, Caption, and Subtitle Injection Against Multimodal Agents
+- **P-028** — Structured Data, CSV, and Spreadsheet Instruction Injection Testing
+- **P-029** — Hidden System Context, Confidential Instructions, and Reasoning Trace Exposure Assessment
+- **P-030** — Unsafe LLM Output Handling, Command Injection, and Application Injection Chains
+- **P-031** — Enterprise RAG Connector Permission Inheritance and Access Control Assessment
+- **P-032** — Vector Database Namespace Isolation and Cross-Tenant Access Testing
+- **P-033** — Embedding-Based Sensitive Information Leakage and Semantic Inference Assessment
+- **P-034** — Retrieval Ranking Manipulation and Search Result Integrity Testing
+- **P-035** — Enterprise Knowledge Base Poisoning and Retrieval Corpus Integrity Assessment
+- **P-036** — Document Provenance, Citation Forgery, and Evidence Laundering Assessment
+- **P-037** — Stale Permissions, Deleted Documents, and Connector Synchronization Security
+- **P-038** — Retrieval Index Enumeration and Unauthorized Semantic Search Assessment
+- **P-039** — Chunk-Level Metadata Manipulation and Retrieval Pipeline Trust Testing
+- **P-040** — Grounded AI Response Verification, False Citation Detection, and Knowledge Integrity Engineering
+- **P-041** — MCP Tool Description, Parameter Schema, and Tool Selection Manipulation
+- **P-042** — MCP Server Impersonation, Discovery Spoofing, and Endpoint Trust Assessment
+- **P-043** — MCP Authentication, Token Forwarding, and Delegated Authorization Security
+- **P-044** — Malicious MCP Server Configuration and Third-Party Trust Boundary Testing
+- **P-045** — Agent-to-Agent Message Authentication, Spoofing, and Communication Integrity
+- **P-046** — Persistent AI Agent Memory Poisoning and Long-Term State Manipulation
+- **P-047** — Autonomous Agent Goal Hijacking, Task Drift, and Workflow Integrity Assessment
+- **P-048** — Unauthorized External Actions Through AI Agent Tool Invocation
+- **P-049** — Multi-Agent Cascading Failures, Compromised Agent Propagation, and Recovery
+- **P-050** — Autonomous Agent Action Budgets, Policy Enforcement, and Safe Delegation Architecture
+- **P-051** — AI Coding Agent Repository Instruction File and Workspace Trust Assessment
+- **P-052** — AI-Generated Pull Request, CI/CD Pipeline, and Build System Compromise Simulation
+- **P-053** — AI-Generated Code Vulnerability Detection and Secure Code Generation Pipeline
+- **P-054** — AI Code Execution Sandbox Isolation and Escape Resistance Assessment
+- **P-055** — LLM Inference Server, API Gateway, and Model Serving Infrastructure Hardening
+- **P-056** — Kubernetes AI Workload Isolation, Service Account Security, and Lateral Movement Testing
+- **P-057** — GPU Resource Sharing, AI Compute Infrastructure Isolation, and Runtime Security
+- **P-058** — Model Registry, Model Artifact Signing, and Integrity Verification Assessment
+- **P-059** — Agent Skills, Plugins, Dependencies, and AI Software Supply Chain Security
+- **P-060** — AI Tool Network Egress, SSRF, and Unauthorized External Connectivity Assessment
+- **P-061** — Supervised Learning Dataset Poisoning and Label Integrity Assessment
+- **P-062** — Fine-Tuned Language Model Backdoor Detection and Artifact Integrity Laboratory
+- **P-063** — Training Data Provenance, Dataset Lineage, and Integrity Verification Pipeline
+- **P-064** — Model Training Pipeline Dependency Tampering and Reproducibility Assessment
+- **P-065** — Adversarial Computer Vision Evasion and Robustness Evaluation
+- **P-066** — Adversarial Text Classification Evasion and Defensive Robustness Testing
+- **P-067** — Model Extraction, Prediction API Abuse, and Model Intellectual Property Protection
+- **P-068** — Training Data Membership Inference and Privacy Leakage Assessment
+- **P-069** — Model Inversion, Sensitive Feature Reconstruction, and Privacy Defense Evaluation
+- **P-070** — Online Learning Feedback Manipulation and Continuous Training Data Poisoning Assessment
+- **P-071** — AI Agent Infinite Loops, Unbounded Consumption, and Resource Exhaustion Testing
+- **P-072** — Multi-Tenant AI Service Denial-of-Wallet, Quota Abuse, and Availability Assessment
+- **P-073** — AI Security Audit Log Tampering, Log Injection, and Evidence Integrity Testing
+- **P-074** — AI-Specific Security Detection Rules, Behavioral Monitoring, and Alerting Platform
+- **P-075** — Autonomous Agent Behavioral Drift, Tool Usage Anomalies, and Continuous Monitoring
+- **P-076** — AI Data Exfiltration and Model Extraction Detection Engineering
+- **P-077** — Compromised AI Agent Incident Investigation and Digital Forensics Simulation
+- **P-078** — AI Agent Emergency Containment, Credential Revocation, and Kill-Switch Engineering
+- **P-079** — Poisoned Knowledge Base, Compromised Agent Memory, and Model Rollback Recovery
+- **P-080** — AI Security Purple Team Exercise and Quantitative Control Effectiveness Evaluation
+- **P-081** — Third-Party AI Provider, Hosted Model, and API Security Due Diligence Assessment
+- **P-082** — AI Bill of Materials, Model Dependencies, and Software Supply Chain Transparency Platform
+- **P-083** — AI Security Control Mapping Against OWASP, NIST, MITRE ATLAS, and Enterprise Standards
+- **P-084** — Enterprise AI Data Retention, Deletion, and Privacy Lifecycle Security Assessment
+- **P-085** — AI Application PII Detection, Data Minimization, and DLP Engineering
+- **P-086** — Confidential AI Computing, Protected Inference, and Sensitive Workload Architecture
+- **P-087** — Cryptographic Audit Trails, Agent Action Attestation, and Accountability Engineering
+- **P-088** — Secure AI Development Lifecycle, Security Gates, and Continuous Assurance Platform
+- **P-089** — EU AI Act-Oriented Technical Security Evidence and High-Risk AI System Assurance Case Study
+- **P-090** — AI Security Risk Quantification, Remediation Prioritization, and Acceptance Criteria Engineering
+- **P-091** — Enterprise Knowledge Assistant: Complete RAG Penetration Test and Security Architecture Review
+- **P-092** — Autonomous Financial Operations Agent: Transaction Authorization, Fraud, and Privilege Security Assessment
+- **P-093** — Enterprise AI Coding Assistant: Repository, Developer Identity, Tool, and CI/CD Security Engagement
+- **P-094** — Multi-Tenant Customer Support AI: Data Privacy, Isolation, Prompt Injection, and Incident Response Engagement
+- **P-095** — AI-Powered Security Operations Center: SOC Copilot Adversarial Testing and Purple Team Engagement
+- **P-096** — Healthcare AI Assistant: Sensitive Data Access, Privacy, Retrieval, and Clinical Workflow Security Assessment
+- **P-097** — Enterprise HR and Recruitment AI: Candidate Data Security, Decision Integrity, and Access Control Assessment
+- **P-098** — AI-Driven Procurement and Contract Management Agents: External Actions, Approval, and Supply Chain Trust Assessment
+- **P-099** — Multi-Cloud Enterprise Agentic AI Platform: Full-Scope Red Team and Security Architecture Engagement
+- **P-100** — Enterprise Model Development and MLOps Platform: End-to-End Model Lifecycle, Infrastructure, and Security Assurance Engagement
+- **P-101** — Multi-Provider AI Gateway Routing, Cache Isolation, and Failover Security Laboratory
+- **P-102** — Unsafe Model Serialization, Deserialization, and Artifact Loading Assessment
+- **P-103** — AI File Upload, Document Parser, and Preprocessing Security Laboratory
+- **P-104** — LLM Evaluation Benchmark Poisoning, Judge Manipulation, and Evaluation Integrity Platform
+- **P-105** — AI Guardrail, Safety Detector, and Validator Bypass-Resistance Assessment
+- **P-106** — LLM Jailbreak, Multi-Turn Policy Evasion, and Misuse-Resistance Evaluation
+- **P-107** — Machine Unlearning Verification and Synthetic Data Privacy Assurance
+- **P-108** — GPU Fault Injection, Shared Accelerator Isolation, and Model Integrity Assessment
+- **P-109** — Confidential AI Computing and Remote Attestation Verification Laboratory
+- **P-110** — Federated Learning Poisoning, Malicious Participants, and Aggregation Security
+- **P-111** — Synthetic Media Provenance, Watermarking, and Deepfake Verification Laboratory
+- **P-112** — Enterprise Shadow AI Discovery, Inventory, and Unauthorized Data Egress Assessment
+- **P-113** — AI-Enabled Phishing, Business Email Compromise, and Impersonation Defense Simulation
+- **P-114** — Cyber-Physical AI Sensor Manipulation, Actuator Authorization, and Emergency-Stop Simulation
+- **P-115** — High-Impact AI Decision Fairness, Calibration, Explainability, and Appeal Assurance
+- **P-116** — Human-AI Trust Calibration, Approval Fatigue, Authority Manipulation, and Reviewer Reliability Laboratory
