@@ -7,7 +7,7 @@ Read this file and the actual source documents in `strategy/` before undertaking
 - `strategy/334-subsublayers.md`: user-maintained canonical technical work packages.
 - `strategy/116-projects.md`: user-maintained project descriptions and mappings.
 
-**These strategy files have not yet been added.** Do not claim to have read them, or invent their contents, until they exist in the repository. Preserve their canonical IDs when they are provided.
+These three source files are now present in `strategy/`. Read their contents directly before making claims or writing tests; preserve their original IDs and mark any interpretation or proposed scenario as such.
 
 ## Initial assignment
 - Work package: `6.1.1` — Enterprise application requirements, assets, roles and security objectives.
