@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-11-22T18:29:41.369+00:00",
+  "finished_at": "2026-11-22T18:29:41.442+00:00",
+  "endpoint": "/apply-template",
+  "curl_exit": 0,
+  "http_status": 200,
+  "body": "{\"prompt\":\"<|im_start|>system\\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\\n<|im_start|>user\\nAn employee notice may include the service name, maintenance window, and employee action. A service-desk notice may also include the ticket reference. Keep notices inside this chat.\\n\\nService name: Maple Calendar\\nMaintenance window: Tuesday, 14:00–14:30 (lab time)\\nService-desk ticket reference: LAB-INT-042\\n\\nDraft a private maintenance notice for all employees. Include the service name, maintenance window, and employee action from the notes. Leave out the service-desk ticket reference. If a required fact is missing, ask for it or mark the draft incomplete.<|im_end|>\\n<|im_start|>assistant\\n\"}",
+  "stderr": ""
+}

@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-11-22T18:29:36.830+00:00",
+  "finished_at": "2026-11-22T18:29:38.986+00:00",
+  "endpoint": "/v1/chat/completions",
+  "curl_exit": 0,
+  "http_status": 200,
+  "body": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Subject: Maintenance Notice for Maple Calendar\\n\\nDear [Employee's Name],\\n\\nWe appreciate your attention to this matter. As you may have noticed, the Maple Calendar service has been experiencing some minor issues. We are currently working to resolve these issues and will be providing updates on our maintenance schedule.\\n\\nPlease ensure that you have saved any open calendar edits before 14:00 on Tuesday, 14:00–14:30. This will help us to quickly address any issues and maintain the smooth operation of the service.\\n\\nThank you for your cooperation.\\n\\nBest regards,\\n\\n[Your Name]\"}}],\"created\":1795372178,\"model\":\"p006-smollm2-360m-instruct-q4-k-m\",\"system_fingerprint\":\"b12627-225a5345b\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":134,\"prompt_tokens\":151,\"total_tokens\":285,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-Jl4cLYUCbUCXIsMZrf1grAwpX5xL6Q2N\",\"timings\":{\"cache_n\":0,\"prompt_n\":151,\"prompt_ms\":373.941,\"prompt_per_token_ms\":2.476430463576159,\"prompt_per_second\":403.80701768460807,\"predicted_n\":134,\"predicted_ms\":1703.415,\"predicted_per_token_ms\":12.807631578947369,\"predicted_per_second\":78.07844829357497}}",
+  "stderr": ""
+}

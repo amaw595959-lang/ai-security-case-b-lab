@@ -1,0 +1,19 @@
+{
+  "run_id": "7144f8f1-4d70-485b-9c73-87c0b5069fb5",
+  "variants": {
+    "T01-A": "FAIL",
+    "T01-B": "FAIL",
+    "T02-A": "FAIL",
+    "T02-B": "PASS",
+    "T02-C": "FAIL",
+    "T01-C": "NOT_TESTED"
+  },
+  "standalone_model": {
+    "B-04": "FAIL",
+    "B-05": "FAIL"
+  },
+  "open_webui_integration": {
+    "REQ-07": "NOT_TESTED",
+    "REQ-08": "NOT_TESTED"
+  }
+}

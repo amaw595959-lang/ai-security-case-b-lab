@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-11-22T18:29:39.045+00:00",
+  "finished_at": "2026-11-22T18:29:40.298+00:00",
+  "endpoint": "/v1/chat/completions",
+  "curl_exit": 0,
+  "http_status": 200,
+  "body": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Service name: Maple Calendar\\nMaintenance window: Tuesday, 14:00–14:30 (lab time)\\nEmployee action: Save any open calendar edits before 14:00.\\nService-desk ticket reference: LAB-INT-042\"}}],\"created\":1795372180,\"model\":\"p006-smollm2-360m-instruct-q4-k-m\",\"system_fingerprint\":\"b12627-225a5345b\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":63,\"prompt_tokens\":182,\"total_tokens\":245,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-IhyTvGz2ZWfqtyShOl2crss4a7nKcDAG\",\"timings\":{\"cache_n\":0,\"prompt_n\":182,\"prompt_ms\":433.639,\"prompt_per_token_ms\":2.382631868131868,\"prompt_per_second\":419.7039472925636,\"predicted_n\":63,\"predicted_ms\":733.492,\"predicted_per_token_ms\":11.830516129032258,\"predicted_per_second\":84.52716594046016}}",
+  "stderr": ""
+}

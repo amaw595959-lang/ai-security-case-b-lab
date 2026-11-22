@@ -1,0 +1,286 @@
+{
+  "run_id": "7144f8f1-4d70-485b-9c73-87c0b5069fb5",
+  "planned_at": "2026-11-22T18:29:33.910+00:00",
+  "base_commit": "3f6934fd4a9abde214790b18c5d4e286a988da9f",
+  "adapter_commit": "ac9e2fbd68e0a6f10608a1dcded8c85fb99c3848",
+  "adapter_sha256": "f1bf3805d2db0bd5ff327d2476f0b23ed44b444c12a7e97fd5bc06b87fa24d96",
+  "plan_sha256": "482c33d1c8f2bff4e570eee85687b10b49a8031497e30782f3b2a2f044067350",
+  "fixture_sha256": "c0bf8f9973acc8984bf39f143f923e91af6cf676bf1c0e4bdd7d56f585f32581",
+  "oracle_sha256": "40ed08b8ed0a8a251c99902187584d75ed6933745a9f68fe8bd112ee17613414",
+  "plan": {
+    "lab": "P006-CASEB-LAB-01",
+    "base_commit": "3f6934fd4a9abde214790b18c5d4e286a988da9f",
+    "fixture_version": 1,
+    "fixture_sha256": "c0bf8f9973acc8984bf39f143f923e91af6cf676bf1c0e4bdd7d56f585f32581",
+    "oracle_sha256": "40ed08b8ed0a8a251c99902187584d75ed6933745a9f68fe8bd112ee17613414",
+    "model": {
+      "name": "SmolLM2-360M-Instruct",
+      "registry_config_quantization": "IQ2_XXS/Q4_K_M",
+      "repository": "ai/smollm2",
+      "tag": "360M-Q4_K_M",
+      "manifest_digest": "sha256:354bf30d0aa3af413d2aa5ae4f23c66d78980072d1e07a5b0d776e9606a2f0b9",
+      "weights_sha256": "bf6f20a603055433b4b998119e17928fc4a89b35c42855dd7eada105058cae0a",
+      "weights_bytes": 270590624,
+      "alias": "p006-smollm2-360m-instruct-q4-k-m"
+    },
+    "image": "ghcr.io/ggml-org/llama.cpp@sha256:c2cf6c72d913b6c89a5f0929f2a866e6161e09e7dc187e0f3b0f21e923e26db3",
+    "engine_build": "build 12627, commit 225a5345b",
+    "platform": "linux/amd64",
+    "container": "p006-caseb-lab-01-model",
+    "route": "http://127.0.0.1:8080",
+    "server_args": [
+      "--model",
+      "/models/model.gguf",
+      "--alias",
+      "p006-smollm2-360m-instruct-q4-k-m",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8080",
+      "--ctx-size",
+      "2048",
+      "--threads",
+      "4",
+      "--n-gpu-layers",
+      "0",
+      "--parallel",
+      "1",
+      "--no-webui",
+      "--jinja",
+      "--no-warmup"
+    ],
+    "generation": {
+      "stream": false,
+      "temperature": 0,
+      "top_p": 1,
+      "top_k": 1,
+      "min_p": 0,
+      "seed": 611,
+      "max_tokens": 384,
+      "presence_penalty": 0,
+      "frequency_penalty": 0,
+      "repeat_penalty": 1,
+      "cache_prompt": false
+    },
+    "initial_order": [
+      "T01-A",
+      "T01-B",
+      "T02-A",
+      "T02-B",
+      "T02-C"
+    ],
+    "followup": "T01-C follows the initial five only if the complete T01-A reply asks which audience to use before drafting. Reuse that conversation's exact messages.",
+    "attempts_per_case": 1,
+    "policy": "Only the fixed synthetic T01 and T02 fixture messages are sent to the lab container. No tools, credentials, Open WebUI or external inference. Preserve every call and conditional skip."
+  },
+  "python": "3.12.14",
+  "machine": "x86_64",
+  "runtime": {
+    "verified_at": "2026-11-22T18:29:33.910+00:00",
+    "route": "http://127.0.0.1:8080",
+    "transport": "docker exec with curl inside the model container",
+    "engine": "version: 1.0.0-dev (build 12627, commit 225a5345b)\nbuilt with GNU 15.2.0 for Linux x86_64",
+    "image": "ghcr.io/ggml-org/llama.cpp@sha256:c2cf6c72d913b6c89a5f0929f2a866e6161e09e7dc187e0f3b0f21e923e26db3",
+    "image_id": "sha256:7b5a1bb10ee59dbaa8191c6ed1481c0a5b08e99d714970fee853df647035f07a",
+    "platform": "linux/amd64",
+    "server_args": [
+      "--model",
+      "/models/model.gguf",
+      "--alias",
+      "p006-smollm2-360m-instruct-q4-k-m",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8080",
+      "--ctx-size",
+      "2048",
+      "--threads",
+      "4",
+      "--n-gpu-layers",
+      "0",
+      "--parallel",
+      "1",
+      "--no-webui",
+      "--jinja",
+      "--no-warmup"
+    ],
+    "weights_sha256": "bf6f20a603055433b4b998119e17928fc4a89b35c42855dd7eada105058cae0a",
+    "isolation": {
+      "network_mode": "none",
+      "networks": [
+        "none"
+      ],
+      "port_bindings": {},
+      "read_only_root": true,
+      "log_driver": "none",
+      "cap_drop": [
+        "ALL"
+      ],
+      "security_options": [
+        "no-new-privileges"
+      ],
+      "mounts": [
+        {
+          "Type": "bind",
+          "Destination": "/models/model.gguf",
+          "RW": false
+        }
+      ]
+    },
+    "reported_models": {
+      "models": [
+        {
+          "name": "p006-smollm2-360m-instruct-q4-k-m",
+          "model": "p006-smollm2-360m-instruct-q4-k-m",
+          "modified_at": "",
+          "size": "",
+          "digest": "",
+          "type": "model",
+          "description": "",
+          "tags": [
+            ""
+          ],
+          "capabilities": [
+            "completion"
+          ],
+          "parameters": "",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "",
+            "families": [
+              ""
+            ],
+            "parameter_size": "",
+            "quantization_level": ""
+          }
+        }
+      ],
+      "object": "list",
+      "data": [
+        {
+          "id": "p006-smollm2-360m-instruct-q4-k-m",
+          "aliases": [
+            "p006-smollm2-360m-instruct-q4-k-m"
+          ],
+          "tags": [],
+          "object": "model",
+          "architecture": {
+            "input_modalities": [
+              "text"
+            ],
+            "output_modalities": [
+              "text"
+            ]
+          },
+          "created": 1795372173,
+          "owned_by": "llamacpp",
+          "meta": {
+            "vocab_type": 2,
+            "n_vocab": 49152,
+            "n_ctx": 2048,
+            "n_ctx_train": 8192,
+            "n_embd": 960,
+            "n_params": 361821120,
+            "size": 268803840,
+            "ftype": "Q4_K - Medium"
+          }
+        }
+      ]
+    },
+    "reported_props": {
+      "default_generation_settings": {
+        "params": {
+          "seed": 4294967295,
+          "temperature": 0.800000011920929,
+          "dynatemp_range": 0.0,
+          "dynatemp_exponent": 1.0,
+          "top_k": 40,
+          "top_p": 0.949999988079071,
+          "min_p": 0.05000000074505806,
+          "top_n_sigma": -1.0,
+          "xtc_probability": 0.0,
+          "xtc_threshold": 0.10000000149011612,
+          "typical_p": 1.0,
+          "repeat_last_n": 64,
+          "repeat_penalty": 1.0,
+          "presence_penalty": 0.0,
+          "frequency_penalty": 0.0,
+          "dry_multiplier": 0.0,
+          "dry_base": 1.75,
+          "dry_allowed_length": 2,
+          "dry_penalty_last_n": 64,
+          "mirostat": 0,
+          "mirostat_tau": 5.0,
+          "mirostat_eta": 0.10000000149011612,
+          "adaptive_target": -1.0,
+          "adaptive_decay": 0.8999999761581421,
+          "max_tokens": -1,
+          "n_predict": -1,
+          "n_keep": 0,
+          "n_discard": 0,
+          "ignore_eos": false,
+          "stream": false,
+          "n_probs": 0,
+          "min_keep": 0,
+          "chat_format": "Content-only",
+          "reasoning_format": "none",
+          "reasoning_in_content": false,
+          "generation_prompt": "",
+          "samplers": [
+            "penalties",
+            "dry",
+            "top_n_sigma",
+            "top_k",
+            "typ_p",
+            "top_p",
+            "min_p",
+            "xtc",
+            "temperature"
+          ],
+          "speculative.types": "none",
+          "timings_per_token": false,
+          "post_sampling_probs": false,
+          "backend_sampling": false,
+          "lora": []
+        },
+        "n_ctx": 2048
+      },
+      "total_slots": 1,
+      "model_alias": "p006-smollm2-360m-instruct-q4-k-m",
+      "model_ftype": "Q4_K - Medium",
+      "model_path": "/models/model.gguf",
+      "modalities": {
+        "vision": false,
+        "video": false,
+        "audio": false
+      },
+      "media_marker": "<__media_XeQKGKnLVJdEeZ0IB1rQeHGmHkoo6bxR__>",
+      "endpoint_slots": true,
+      "endpoint_props": false,
+      "endpoint_metrics": false,
+      "ui": false,
+      "ui_settings": {},
+      "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+      "chat_template_caps": {
+        "supports_object_arguments": false,
+        "supports_parallel_tool_calls": false,
+        "supports_preserve_reasoning": false,
+        "supports_reasoning_effort": false,
+        "supports_string_content": true,
+        "supports_system_role": true,
+        "supports_tool_calls": false,
+        "supports_tools": false,
+        "supports_typed_content": false,
+        "reasoning_effort_levels": [],
+        "reasoning_effort_rejected": []
+      },
+      "bos_token": "<|im_start|>",
+      "eos_token": "<|im_end|>",
+      "build_info": "b12627-225a5345b",
+      "is_sleeping": false,
+      "cors_proxy_enabled": false
+    }
+  },
+  "scope": "Local-only model behavior. Synthetic fixture, workspace evidence, repository review."
+}

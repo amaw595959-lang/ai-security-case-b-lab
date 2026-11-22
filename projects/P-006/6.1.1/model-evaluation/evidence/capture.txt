@@ -1,0 +1,7 @@
+$ python3.12 -u -B evaluate.py capture /tmp/p006-model.XBZlVG/run
+T01-A captured, HTTP status 200
+T01-B captured, HTTP status 200
+T02-A captured, HTTP status 200
+T02-B captured, HTTP status 200
+T02-C captured, HTTP status 200
+Capture exit status: 0

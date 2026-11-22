@@ -1,0 +1,2 @@
+$ python3.12 -B evaluate.py follow-up /tmp/p006-model.XBZlVG/run /tmp/p006-model.XBZlVG/review.json
+T01-C NOT_TESTED No complete T01-A audience clarification before drafting was established.
