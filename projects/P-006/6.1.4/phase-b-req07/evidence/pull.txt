@@ -1,0 +1,76 @@
+$ docker pull --platform linux/amd64 ghcr.io/open-webui/open-webui@sha256:aa90751262a383d1279d76542fadab3a80c28b527f5415e9ed774182062525c1
+ghcr.io/open-webui/open-webui@sha256:aa90751262a383d1279d76542fadab3a80c28b527f5415e9ed774182062525c1: Pulling from open-webui/open-webui
+37fb86c2a767: Pulling fs layer
+68bced9e0afa: Pulling fs layer
+2dc99d2d0a39: Pulling fs layer
+05e0eee5572e: Pulling fs layer
+8256bae1088f: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+932d385caefa: Pulling fs layer
+b80f7e5c4408: Pulling fs layer
+05e0eee5572e: Waiting
+8256bae1088f: Waiting
+267e0cecf559: Pulling fs layer
+2d9cda5450d0: Pulling fs layer
+1085589dd637: Pulling fs layer
+f598780974a8: Pulling fs layer
+ef294d5a59bc: Pulling fs layer
+b6cfda37613d: Pulling fs layer
+495d2f4dcd73: Pulling fs layer
+4f4fb700ef54: Waiting
+932d385caefa: Waiting
+b80f7e5c4408: Waiting
+267e0cecf559: Waiting
+2d9cda5450d0: Waiting
+1085589dd637: Waiting
+f598780974a8: Waiting
+ef294d5a59bc: Waiting
+b6cfda37613d: Waiting
+495d2f4dcd73: Waiting
+68bced9e0afa: Verifying Checksum
+68bced9e0afa: Download complete
+2dc99d2d0a39: Verifying Checksum
+2dc99d2d0a39: Download complete
+05e0eee5572e: Verifying Checksum
+05e0eee5572e: Download complete
+8256bae1088f: Verifying Checksum
+8256bae1088f: Download complete
+4f4fb700ef54: Verifying Checksum
+4f4fb700ef54: Download complete
+37fb86c2a767: Verifying Checksum
+37fb86c2a767: Download complete
+932d385caefa: Verifying Checksum
+932d385caefa: Download complete
+b80f7e5c4408: Verifying Checksum
+b80f7e5c4408: Download complete
+2d9cda5450d0: Download complete
+37fb86c2a767: Pull complete
+68bced9e0afa: Pull complete
+2dc99d2d0a39: Pull complete
+f598780974a8: Verifying Checksum
+f598780974a8: Download complete
+05e0eee5572e: Pull complete
+ef294d5a59bc: Verifying Checksum
+ef294d5a59bc: Download complete
+b6cfda37613d: Verifying Checksum
+b6cfda37613d: Download complete
+495d2f4dcd73: Verifying Checksum
+495d2f4dcd73: Download complete
+8256bae1088f: Pull complete
+4f4fb700ef54: Pull complete
+932d385caefa: Pull complete
+b80f7e5c4408: Pull complete
+267e0cecf559: Verifying Checksum
+267e0cecf559: Download complete
+267e0cecf559: Pull complete
+2d9cda5450d0: Pull complete
+1085589dd637: Verifying Checksum
+1085589dd637: Download complete
+1085589dd637: Pull complete
+f598780974a8: Pull complete
+ef294d5a59bc: Pull complete
+b6cfda37613d: Pull complete
+495d2f4dcd73: Pull complete
+Digest: sha256:aa90751262a383d1279d76542fadab3a80c28b527f5415e9ed774182062525c1
+Status: Downloaded newer image for ghcr.io/open-webui/open-webui@sha256:aa90751262a383d1279d76542fadab3a80c28b527f5415e9ed774182062525c1
+ghcr.io/open-webui/open-webui@sha256:aa90751262a383d1279d76542fadab3a80c28b527f5415e9ed774182062525c1

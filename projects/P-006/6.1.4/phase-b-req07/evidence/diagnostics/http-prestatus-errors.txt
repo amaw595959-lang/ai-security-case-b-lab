@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/p006/check_http.py", line 263, in <module>
+    main()
+  File "/p006/check_http.py", line 246, in main
+    http(f"{ROOT}/{notice}/publish", actor="analyst", body={}, status=404)
+  File "/p006/check_http.py", line 59, in http
+    raise AssertionError(f"{method} {path} returned {response.status}. Expected {status}.")
+AssertionError: POST /api/p006/notices/ec30a872-e7b7-4d94-aa0c-580cc99fbd06/publish returned 405. Expected 404.

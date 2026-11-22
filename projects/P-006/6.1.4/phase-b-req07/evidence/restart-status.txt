@@ -1,0 +1,3 @@
+$ docker restart --timeout 5 p006-req07-webui
+p006-req07-webui
+{"version":"0.13.4","deployment_id":""}

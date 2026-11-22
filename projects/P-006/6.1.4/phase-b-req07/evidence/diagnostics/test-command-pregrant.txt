@@ -1,0 +1,2 @@
+$ docker exec -i p006-req07-webui python3 -B /p006/check_http.py < ../../6.1.1/practice-lab/fixtures/case-b.json
+Exit status: 1

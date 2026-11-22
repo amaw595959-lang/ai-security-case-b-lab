@@ -1,0 +1,1 @@
+python3: can't open file '/p006/serve.py': [Errno 13] Permission denied

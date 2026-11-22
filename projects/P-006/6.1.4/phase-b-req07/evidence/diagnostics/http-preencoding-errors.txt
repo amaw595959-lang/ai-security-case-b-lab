@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/p006/check_http.py", line 263, in <module>
+    main()
+  File "/p006/check_http.py", line 211, in main
+    source, actual_candidate = real_model(fixtures, identities)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p006/check_http.py", line 165, in real_model
+    result = http("/api/chat/completions", actor="analyst", body={
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p006/check_http.py", line 49, in http
+    connection.request(method, path, json.dumps(body, ensure_ascii=False) if body is not None else None, headers)
+  File "/usr/local/lib/python3.12/http/client.py", line 1386, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.12/http/client.py", line 1431, in _send_request
+    body = _encode(body, 'body')
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/http/client.py", line 178, in _encode
+    raise UnicodeEncodeError(
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2013' in position 440: Body ('–') is not valid Latin-1. Use body.encode('utf-8') if you want to send it encoded in UTF-8.
