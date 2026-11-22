@@ -1,0 +1,75 @@
+$ python3 --version
+Python 3.13.5
+
+exit status: 0
+
+$ python3 -m venv /tmp/p006-req07-1407729c
+
+exit status: 0
+
+$ /tmp/p006-req07-1407729c/bin/python -B -m unittest discover -s tests -v
+test_T03_A_wrong_model_draft_is_contained (test_http_preview.HttpPreviewSecurityTests.test_T03_A_wrong_model_draft_is_contained) ... ok
+test_T03_B_clean_and_wrong_candidate_yield_same_preview (test_http_preview.HttpPreviewSecurityTests.test_T03_B_clean_and_wrong_candidate_yield_same_preview) ... ok
+test_T03_C_missing_audience_confirmation_held (test_http_preview.HttpPreviewSecurityTests.test_T03_C_missing_audience_confirmation_held) ... ok
+test_T03_D_stale_approval_rejected_and_held (test_http_preview.HttpPreviewSecurityTests.test_T03_D_stale_approval_rejected_and_held) ... ok
+test_T03_E_missing_required_approved_fact_refused (test_http_preview.HttpPreviewSecurityTests.test_T03_E_missing_required_approved_fact_refused) ... ok
+test_T03_F_wrong_confirmed_audience_held (test_http_preview.HttpPreviewSecurityTests.test_T03_F_wrong_confirmed_audience_held) ... ok
+test_analyst_cannot_self_approve_or_spoof_reviewer (test_http_preview.HttpPreviewSecurityTests.test_analyst_cannot_self_approve_or_spoof_reviewer) ... ok
+test_decision_records_include_allowed_and_denied_without_content (test_http_preview.HttpPreviewSecurityTests.test_decision_records_include_allowed_and_denied_without_content) ... ok
+test_excluded_ticket_inside_approved_value_is_rejected (test_http_preview.HttpPreviewSecurityTests.test_excluded_ticket_inside_approved_value_is_rejected) ... ok
+test_new_revision_can_be_approved_again (test_http_preview.HttpPreviewSecurityTests.test_new_revision_can_be_approved_again) ... ok
+test_no_publish_share_tool_or_delivery_endpoint (test_http_preview.HttpPreviewSecurityTests.test_no_publish_share_tool_or_delivery_endpoint) ... ok
+test_notice_identifier_and_duplicate_rejected (test_http_preview.HttpPreviewSecurityTests.test_notice_identifier_and_duplicate_rejected) ... ok
+test_only_approved_preview_is_visible_to_owner (test_http_preview.HttpPreviewSecurityTests.test_only_approved_preview_is_visible_to_owner) ... ok
+test_preview_recheck_after_audience_changed (test_http_preview.HttpPreviewSecurityTests.test_preview_recheck_after_audience_changed) ... ok
+test_reviewer_approval_requires_all_nonempty_allowed_fields (test_http_preview.HttpPreviewSecurityTests.test_reviewer_approval_requires_all_nonempty_allowed_fields) ... ok
+test_reviewer_cannot_create_confirm_or_preview (test_http_preview.HttpPreviewSecurityTests.test_reviewer_cannot_create_confirm_or_preview) ... ok
+test_revise_invalidates_existing_ready_state_and_approval (test_http_preview.HttpPreviewSecurityTests.test_revise_invalidates_existing_ready_state_and_approval) ... ok
+test_server_binds_only_to_loopback (test_http_preview.HttpPreviewSecurityTests.test_server_binds_only_to_loopback) ... ok
+test_unauthenticated_and_invalid_credentials_cannot_create (test_http_preview.HttpPreviewSecurityTests.test_unauthenticated_and_invalid_credentials_cannot_create) ... ok
+test_unrelated_analyst_cannot_view_or_modify_other_notice (test_http_preview.HttpPreviewSecurityTests.test_unrelated_analyst_cannot_view_or_modify_other_notice) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 10.606s
+
+OK
+
+exit status: 0
+
+$ /tmp/p006-req07-1407729c/bin/python -B -m unittest discover -s tests -v
+test_T03_A_wrong_model_draft_is_contained (test_http_preview.HttpPreviewSecurityTests.test_T03_A_wrong_model_draft_is_contained) ... ok
+test_T03_B_clean_and_wrong_candidate_yield_same_preview (test_http_preview.HttpPreviewSecurityTests.test_T03_B_clean_and_wrong_candidate_yield_same_preview) ... ok
+test_T03_C_missing_audience_confirmation_held (test_http_preview.HttpPreviewSecurityTests.test_T03_C_missing_audience_confirmation_held) ... ok
+test_T03_D_stale_approval_rejected_and_held (test_http_preview.HttpPreviewSecurityTests.test_T03_D_stale_approval_rejected_and_held) ... ok
+test_T03_E_missing_required_approved_fact_refused (test_http_preview.HttpPreviewSecurityTests.test_T03_E_missing_required_approved_fact_refused) ... ok
+test_T03_F_wrong_confirmed_audience_held (test_http_preview.HttpPreviewSecurityTests.test_T03_F_wrong_confirmed_audience_held) ... ok
+test_analyst_cannot_self_approve_or_spoof_reviewer (test_http_preview.HttpPreviewSecurityTests.test_analyst_cannot_self_approve_or_spoof_reviewer) ... ok
+test_decision_records_include_allowed_and_denied_without_content (test_http_preview.HttpPreviewSecurityTests.test_decision_records_include_allowed_and_denied_without_content) ... ok
+test_excluded_ticket_inside_approved_value_is_rejected (test_http_preview.HttpPreviewSecurityTests.test_excluded_ticket_inside_approved_value_is_rejected) ... ok
+test_new_revision_can_be_approved_again (test_http_preview.HttpPreviewSecurityTests.test_new_revision_can_be_approved_again) ... ok
+test_no_publish_share_tool_or_delivery_endpoint (test_http_preview.HttpPreviewSecurityTests.test_no_publish_share_tool_or_delivery_endpoint) ... ok
+test_notice_identifier_and_duplicate_rejected (test_http_preview.HttpPreviewSecurityTests.test_notice_identifier_and_duplicate_rejected) ... ok
+test_only_approved_preview_is_visible_to_owner (test_http_preview.HttpPreviewSecurityTests.test_only_approved_preview_is_visible_to_owner) ... ok
+test_preview_recheck_after_audience_changed (test_http_preview.HttpPreviewSecurityTests.test_preview_recheck_after_audience_changed) ... ok
+test_reviewer_approval_requires_all_nonempty_allowed_fields (test_http_preview.HttpPreviewSecurityTests.test_reviewer_approval_requires_all_nonempty_allowed_fields) ... ok
+test_reviewer_cannot_create_confirm_or_preview (test_http_preview.HttpPreviewSecurityTests.test_reviewer_cannot_create_confirm_or_preview) ... ok
+test_revise_invalidates_existing_ready_state_and_approval (test_http_preview.HttpPreviewSecurityTests.test_revise_invalidates_existing_ready_state_and_approval) ... ok
+test_server_binds_only_to_loopback (test_http_preview.HttpPreviewSecurityTests.test_server_binds_only_to_loopback) ... ok
+test_unauthenticated_and_invalid_credentials_cannot_create (test_http_preview.HttpPreviewSecurityTests.test_unauthenticated_and_invalid_credentials_cannot_create) ... ok
+test_unrelated_analyst_cannot_view_or_modify_other_notice (test_http_preview.HttpPreviewSecurityTests.test_unrelated_analyst_cannot_view_or_modify_other_notice) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 10.646s
+
+OK
+
+exit status: 0
+
+$ sha256sum -c evidence/SHA256SUMS
+app.py: OK
+tests/test_http_preview.py: OK
+demo_receipts.py: OK
+README.md: OK
+evidence/http-sqlite-receipts.json: OK
+
+exit status: 0
