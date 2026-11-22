@@ -8,7 +8,7 @@ Personal learning repository for enterprise AI security engineering.
 - **Case C:** Independent security controls, evidence, remediation and retesting.
 
 ## Repository layout
-- `strategy/` — Original reference risk, curriculum and project documents (upload separately).
+- `strategy/` — Uploaded reference risk and curriculum documents plus an extracted canonical project index.
 - `projects/P-006/6.1.1/` — First work package: enterprise application requirements, assets, roles and security objectives.
 - `AGENTS.md` — Instructions for coding assistants working in this repository.
 
