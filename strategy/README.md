@@ -6,4 +6,4 @@ Place the original, authoritative versions of these documents here:
 - `334-subsublayers.md` — 10 layers, 57 sublayers and 334 work packages.
 - `116-projects.md` — Canonical 116-project inventory.
 
-**Not uploaded yet.** Do not treat this directory or the filenames above as proof that the source documents are present. Check source mappings before generating assessment steps.
+**All three files are now present.** The 110-risk and 334-sublayer documents reproduce the provided source attachments. `116-projects.md` is a deduplicated index extracted from the 334-sublayer source, not a separately uploaded project document. Verify mappings against the original curriculum before generating assessment steps.
