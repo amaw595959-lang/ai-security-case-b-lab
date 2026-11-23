@@ -2,7 +2,7 @@
 
 **Scenario** · Cedar Exhibit Booking
 
-**Curriculum** · Preparatory transfer from P-006 to the independent technical defense in 6.8.8. This exercise uses a single authorized lab. [Canonical work packages](../../../../strategy/334-sublayers.md)
+**Curriculum** · Preparatory transfer from P-006 to the independent technical defense in 6.8.8. This exercise uses a single authorized lab. [Canonical work packages](../../../../strategy/334-subsublayers.md)
 
 Cedar Exhibit Booking serves two fictional venues. Each has a different operator and reviewer. An operator drafts a maintenance notice from private notes. “Tell the venue team” could mean the reservation desk or the internal support group. Those audiences may see different fields. A ready preview is permitted only for the reservation desk inside the lab. The support reference is fictional private data. Use the exact two-venue fixture and record which information can reach each identity and destination. [Synthetic fixture](fixture.json)
 
