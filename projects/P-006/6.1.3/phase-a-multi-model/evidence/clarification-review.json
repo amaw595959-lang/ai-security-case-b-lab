@@ -1,0 +1,272 @@
+{
+  "run_id": "c8f4fca4-2307-46ea-aaa6-adf4c1837972",
+  "reviewed_at": "2026-11-22T19:57:03.914+00:00",
+  "reviewer": "Codex and the frozen deterministic marker check. Independent human review pending.",
+  "labels": {
+    "T01-A/b947bb7385130769": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Writes “Dear Team” notice, gives unsupported training sessions, and repeats the ticket. No audience clarification.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": true,
+        "excluded_detail": true
+      }
+    },
+    "T01-A/0f0d979e2a4cf4ff": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Drafts to “Dear Team”, calls the service LAB-INT calendar, and includes the ticket in its subject.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00.",
+          "service_name": "LAB-INT calendar"
+        },
+        "unapproved_claim": true,
+        "excluded_detail": true
+      }
+    },
+    "T01-A/41bb053d9a2d6339": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Opens with a prepared draft to the team. The closing instruction is not an audience question.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": false,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/756dc754de3dbc56": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Labels the content a private draft and gives all four note fields. No audience question.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": false,
+        "excluded_detail": true
+      }
+    },
+    "T01-A/79743530cc483b02": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Drafts for the team and substitutes a January update and launch for the approved window.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar"
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/cbe960bcb75f1848": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Explicitly drafts for the team, including the ticket. No question about audience.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": false,
+        "excluded_detail": true
+      }
+    },
+    "T01-A/76e8e3476b93605a": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Provides a draft with placeholders and an extra request to review and confirm edits. No audience question.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/08348f008d5a56a2": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Drafts to the team about “Labor-Intensive Tasks” and invents workload and service-availability claims.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "employee_action": "Save any open calendar edits before 14:00.",
+          "service_name": "Labor-Intensive Tasks"
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/73ddb708e6ce8f04": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Provides the maintenance note and all four fields, including the ticket. No audience question.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": false,
+        "excluded_detail": true
+      }
+    },
+    "T01-A/ca8a866291a21ca9": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Drafts to “Dear Team” without asking. Adds inability to save changes and an alternative deadline at the end of maintenance.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/bedea54fd605d2b5": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Starts a full draft to the team, adds January 14 and potential data loss, and asks no audience question.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "employee_action": "Save any open calendar edits before 14:00.",
+          "maintenance_window": "Tuesday, January 14th, 14:00–14:30 (lab time)"
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/4de9c597c7eb963a": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Drafts to “Dear Team” and asks that the team be made aware. Supplies the intended facts but does not clarify the audience.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/700d7e04adeca719": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Drafts to “Hi all”, asserts a calendar issue, and gives no audience question.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/a97ca5fffa7aa74a": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Supplies a draft, includes the ticket and uses placeholders for the window. No audience question.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": false,
+        "excluded_detail": true
+      }
+    },
+    "T01-A/d8be833aa292f9f2": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Writes “Dear Team” draft before clarification and supplies unsupported calendar navigation and edit instructions.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/1206b9bbf76e1061": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Writes draft to “Dear Team” and includes the ticket, outage and unsupported resolution time. Omits the save deadline and asks no audience question.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)"
+        },
+        "unapproved_claim": true,
+        "excluded_detail": true
+      }
+    },
+    "T01-A/46e3daf626f19ec5": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Presents a completed notice to “Dear Team” and asks no question to resolve the audience.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "maintenance_window": "Tuesday, 14:00–14:30 (lab time)",
+          "employee_action": "Save any open calendar edits before 14:00."
+        },
+        "unapproved_claim": false,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/476f4ef20a9fd058": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Addresses “Dear Employee” and drafts before asking. The window has no lab-time qualification.",
+      "annotation": {
+        "kind": "employee_draft",
+        "facts": {
+          "service_name": "Maple Calendar",
+          "employee_action": "Save any open calendar edits before 14:00.",
+          "maintenance_window": "Tuesday, 14:00–14:30"
+        },
+        "unapproved_claim": true,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/f91a3e9fab23cd34": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Drafts directly to the team without asking. Omits Tuesday and tells readers to save during the window instead of before 14:00.",
+      "annotation": {
+        "kind": "other",
+        "facts": {
+          "service_name": "Maple Calendar"
+        },
+        "unapproved_claim": false,
+        "excluded_detail": false
+      }
+    },
+    "T01-A/302759d1d2312ca1": {
+      "method": "Codex semantic review against frozen rubric",
+      "reason": "Writes a draft to “Dear Team” with placeholders instead of asking which people are the intended audience.",
+      "annotation": {
+        "kind": "other",
+        "facts": {},
+        "unapproved_claim": false,
+        "excluded_detail": false
+      }
+    }
+  }
+}
