@@ -4,96 +4,148 @@ cd "$(dirname "$0")"
 umask 077
 artifact_dir=$(realpath "$1")
 output_dir=$(realpath "$2")
-mkdir "$output_dir"
-phase_b=$(realpath ../../6.1.4/phase-b-req07)
-app_image=ghcr.io/open-webui/open-webui@sha256:aa90751262a383d1279d76542fadab3a80c28b527f5415e9ed774182062525c1
+upstream=$(realpath "$3")
 source_commit=0666e59d26a4d056e0bacee41742486badd71cf8
-test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.revision"}}' "$app_image")" = "$source_commit"
-for name in p006-req08-model p006-req08-baseline p006-req08-controlled; do
-  if docker container inspect "$name" >/dev/null 2>&1; then
-    printf 'Container name already exists: %s\n' "$name" >&2
-    exit 1
-  fi
-done
+app_image=ghcr.io/open-webui/open-webui@sha256:aa90751262a383d1279d76542fadab3a80c28b527f5415e9ed774182062525c1
+phase_b=$(realpath ../../6.1.4/phase-b-req07)
+fixture=$(realpath ../../6.1.1/practice-lab/fixtures/case-b.json)
+mkdir "$output_dir"
+test "$(git -C "$upstream" rev-parse HEAD)" = "$source_commit"
+test "$(docker image inspect --format '{{.Os}}/{{.Architecture}} {{index .Config.Labels "org.opencontainers.image.revision"}}' "$app_image")" = "linux/amd64 $source_commit"
+run_id=$(python3.12 -B -c 'from uuid import uuid4; print(uuid4())')
+app_name=p006-req08-app-${run_id:0:8}
+model_name=p006-req08-model-${run_id:0:8}
+scratch=$(mktemp -d /tmp/p006-req08-runtime.XXXXXX)
+chmod 0755 "$scratch"
+mkdir -m 0755 "$scratch/overlay" "$scratch/phase-b" "$scratch/tests"
 cleanup() {
-  for name in p006-req08-controlled p006-req08-baseline p006-req08-model; do
+  for name in "$app_name" "$model_name"; do
     if docker container inspect "$name" >/dev/null 2>&1; then
-      docker stop --timeout 5 "$name"
-      docker rm "$name"
+      docker rm -f "$name" >/dev/null
     fi
   done
 }
 trap cleanup EXIT
-python3.12 -B - "$artifact_dir" <<'PY'
+for name in "$app_name" "$model_name"; do
+  if docker container inspect "$name" >/dev/null 2>&1; then
+    trap - EXIT
+    printf 'Out-of-scope existing container name: %s\n' "$name" >&2
+    exit 1
+  fi
+done
+install -m 0644 overlay/*.py "$scratch/overlay"
+install -m 0644 "$phase_b"/overlay/*.py "$scratch/phase-b"
+install -m 0644 tests/{native_observer,probe_dispatch}.py "$scratch/tests"
+install -m 0644 "$fixture" "$scratch/fixture.json"
+modules=(backend/open_webui/events.py backend/open_webui/utils/middleware.py)
+for module in "${modules[@]}"; do
+  mkdir -p -m 0755 "$scratch/source/$(dirname "$module")"
+  git -C "$upstream" show "$source_commit:$module" > "$scratch/source/$module"
+  read -r source_hash _ < <(sha256sum "$scratch/source/$module")
+  image_hash=$(docker run --rm --pull never --network none --cap-drop ALL --security-opt no-new-privileges \
+    "$app_image" sha256sum "/app/$module" | cut -d ' ' -f 1)
+  test "$source_hash" = "$image_hash"
+  printf 'Original source and image hash %s %s\n' "$module" "$source_hash"
+done
+patch=$(realpath overlay/notice-events.patch)
+(cd "$scratch/source" && git apply --check "$patch" && git apply "$patch")
+mounts=()
+for module in "${modules[@]}"; do
+  chmod 0644 "$scratch/source/$module"
+  mounts+=(--mount "type=bind,src=$scratch/source/$module,dst=/app/$module,readonly")
+done
+
+printf 'REQ-08 retest run %s\n' "$run_id"
+probe_status=0
+docker run --rm --pull never --network none --cap-drop ALL --security-opt no-new-privileges \
+  --env-file "$phase_b/lab.env" -e PYTHONPATH=/app/backend:/p006-c \
+  -e ENABLE_FUNCTIONS=false -e GLOBAL_LOG_LEVEL=WARNING -e "P006_RUN_ID=$run_id" \
+  --mount "type=bind,src=$scratch/overlay,dst=/p006-c,readonly" \
+  --mount "type=bind,src=$scratch/tests,dst=/p006-tests,readonly" \
+  "${mounts[@]}" --tmpfs /p006-state:rw,noexec,nosuid,nodev,mode=0700 \
+  "$app_image" python3 -B /p006-tests/probe_dispatch.py fixed \
+  > "$output_dir/private-dispatch.log" 2>&1 || probe_status=$?
+printf 'Pinned dispatch probe exit code %s\n' "$probe_status"
+if [[ "$probe_status" != 0 ]]; then
+  exit "$probe_status"
+fi
+python3.12 -B - "$output_dir/private-dispatch.log" <<'PY' | tee "$output_dir/dispatch-probe.txt"
+import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path('../../6.1.1/model-evaluation').resolve()))
+raw = Path(sys.argv[1]).read_text()
+assert "fictional restricted notice sentinel" not in raw
+assert "synthetic native test sink unavailable" in raw
+records = [json.loads(line) for line in raw.splitlines() if line.startswith("{")]
+assert len(records) == 2 and all(record["mode"] == "fixed" for record in records)
+for record in records:
+    print(json.dumps(record, sort_keys=True))
+print("Injected native consumer failure observed. Restricted sentinel count 0.")
+PY
+
+python3.12 -B - "$artifact_dir" "$model_name" <<'PY'
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path("../../6.1.1/model-evaluation").resolve()))
 import evaluate
-evaluate.PLAN = {**evaluate.PLAN, 'container': 'p006-req08-model'}
+
+evaluate.PLAN = {**evaluate.PLAN, "container": sys.argv[2]}
 evaluate.start_lab(Path(sys.argv[1]))
 PY
-total_status=0
-for mode in baseline controlled; do
-  name=p006-req08-$mode
-  run_id=$(python3.12 -B -c 'from uuid import uuid4; print(uuid4())')
-  audit_level=NONE
-  file_audit=false
-  if [[ "$mode" = baseline ]]; then
-    audit_level=REQUEST_RESPONSE
-    file_audit=true
-  fi
-  docker run --name "$name" --detach --pull never \
-    --label caseb.lab=P006-CASEB-LAB-01-C --network container:p006-req08-model \
-    --cap-drop ALL --security-opt no-new-privileges --env-file "$phase_b/lab.env" \
-    -e PYTHONPATH=/app/backend:/p006-b:/p006-c -e GLOBAL_LOG_LEVEL=WARNING \
-    -e "P006_DATA_MODE=$mode" -e "P006_RUN_ID=$run_id" -e "AUDIT_LOG_LEVEL=$audit_level" \
-    -e "ENABLE_AUDIT_LOGS_FILE=$file_audit" -e ENABLE_AUDIT_STDOUT=false \
-    -e AUDIT_INCLUDED_PATHS=chat/completions -e AUDIT_EXCLUDED_PATHS= -e MAX_BODY_LOG_SIZE=8192 \
-    -e AUDIT_LOGS_FILE_PATH=/p006-state/native-audit.jsonl \
-    --mount "type=bind,src=$phase_b/overlay,dst=/p006-b,readonly" \
-    --mount "type=bind,src=$PWD/overlay,dst=/p006-c,readonly" \
-    --tmpfs /p006-state:rw,noexec,nosuid,nodev,mode=0700 \
-    "$app_image" python3 -B /p006-c/serve_c.py
-  ready=false
-  for (( step=0; step < 60; step++ )); do
-    if docker exec "$name" curl -q --noproxy 127.0.0.1 -fsS \
-      --max-time 3 http://127.0.0.1:3000/api/version 2>/dev/null; then
-      printf '\n'
-      ready=true
-      break
-    fi
-    if [[ "$(docker container inspect --format '{{.State.Running}}' "$name")" != true ]]; then
-      break
-    fi
-    sleep 1
-  done
-  if [[ "$ready" = true ]]; then
-    {
-      docker inspect p006-req08-model "$name" --format '{{.Name}} {{.Image}} {{.HostConfig.NetworkMode}} {{json .HostConfig.PortBindings}}'
-      docker exec "$name" python3 -B -c 'import socket; print("interfaces:", socket.if_nameindex())'
-      docker exec p006-req08-model sha256sum /models/model.gguf
-      docker exec p006-req08-model /app/llama-server --version
-    } > "$output_dir/$mode-topology.txt" 2>&1
+docker run --name "$app_name" --detach --pull never \
+  --label caseb.lab=P006-CASEB-LAB-01-C-RETEST --network "container:$model_name" \
+  --cap-drop ALL --security-opt no-new-privileges --env-file "$phase_b/lab.env" \
+  -e PYTHONPATH=/app/backend:/p006-b:/p006-c:/p006-tests -e GLOBAL_LOG_LEVEL=WARNING \
+  -e "P006_RUN_ID=$run_id" -e P006_OBSERVE_NATIVE=1 -e ENABLE_FUNCTIONS=false \
+  -e AUDIT_LOG_LEVEL=METADATA -e AUDIT_INCLUDED_PATHS= -e 'AUDIT_EXCLUDED_PATHS=p006/notice/chat$' \
+  -e ENABLE_AUDIT_LOGS_FILE=true -e ENABLE_AUDIT_STDOUT=false \
+  -e AUDIT_LOGS_FILE_PATH=/p006-state/native-audit.jsonl \
+  --mount "type=bind,src=$scratch/phase-b,dst=/p006-b,readonly" \
+  --mount "type=bind,src=$scratch/overlay,dst=/p006-c,readonly" \
+  --mount "type=bind,src=$scratch/tests,dst=/p006-tests,readonly" \
+  --mount "type=bind,src=$scratch/fixture.json,dst=/p006-fixture.json,readonly" \
+  "${mounts[@]}" --tmpfs /p006-state:rw,noexec,nosuid,nodev,mode=0700 \
+  "$app_image" python3 -B /p006-c/serve_c.py
+
+status=2
+for (( step=0; step < 60; step++ )); do
+  if docker exec "$app_name" curl -q --noproxy 127.0.0.1 -fsS --max-time 3 http://127.0.0.1:3000/api/version 2>/dev/null; then
+    printf '\n'
     status=0
-    docker exec -i "$name" python3 -B /p006-c/check_c.py \
-      < ../../6.1.1/practice-lab/fixtures/case-b.json \
-      > "$output_dir/$mode.jsonl" 2> "$output_dir/$mode-errors.txt" || status=$?
-  else
-    status=2
+    break
   fi
-  docker logs "$name" > "$output_dir/$mode-app.log" 2>&1
-  if [[ "$mode" = controlled && "$status" = 0 ]]; then
-    if grep -Fq 'LAB-INT-042' "$output_dir/$mode-app.log"; then
-      printf 'Controlled application log contained the marker.\n'
-      status=1
-    else
-      printf 'Controlled application log marker count: 0\n'
-    fi
+  if [[ "$(docker container inspect --format '{{.State.Running}}' "$app_name")" != true ]]; then
+    break
   fi
-  printf '%s run %s exit status: %s\n' "$mode" "$run_id" "$status"
-  if (( status != 0 )); then total_status=1; fi
-  docker stop --timeout 5 "$name"
-  docker rm "$name"
+  sleep 1
 done
-exit "$total_status"
+if [[ "$status" = 0 ]]; then
+  {
+    docker inspect "$model_name" "$app_name" --format '{{.Name}} {{.Image}} {{.HostConfig.NetworkMode}} {{json .HostConfig.PortBindings}}'
+    docker exec "$app_name" python3 -B -c 'import socket; assert [name for _, name in socket.if_nameindex()] == ["lo"]; print("interfaces: lo")'
+    docker exec "$model_name" sha256sum /models/model.gguf
+    docker exec "$model_name" /app/llama-server --version
+    docker exec "$app_name" sha256sum /app/backend/open_webui/main.py /app/backend/open_webui/events.py /app/backend/open_webui/utils/middleware.py
+  } > "$output_dir/topology.txt" 2>&1
+  docker exec -i "$app_name" python3 -B /p006-c/check_c.py < "$fixture" \
+    > "$output_dir/results.jsonl" 2> "$output_dir/check-errors.txt" || status=$?
+fi
+docker logs "$app_name" > "$output_dir/private-app.log" 2>&1
+if [[ "$status" = 0 ]]; then
+  python3.12 -B - "$output_dir/private-app.log" <<'PY' | tee "$output_dir/log-observation.txt" || status=$?
+import hashlib
+import sys
+from pathlib import Path
+
+raw = Path(sys.argv[1]).read_bytes()
+markers = (b"LAB-INT-042", b"Maple Calendar", b"content_preview")
+counts = [raw.count(marker) for marker in markers]
+print(f"Application console SHA-256 {hashlib.sha256(raw).hexdigest()}")
+print(f"Assessed restricted-content marker counts {counts}")
+assert counts == [0, 0, 0]
+PY
+fi
+printf 'REQ-08 retest run %s exit code %s\n' "$run_id" "$status"
+exit "$status"

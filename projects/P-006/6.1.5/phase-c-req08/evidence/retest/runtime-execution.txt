@@ -1,0 +1,16 @@
+Command bash projects/P-006/6.1.5/phase-c-req08/run_lab.sh /tmp/p006-model.XBZlVG/artifacts /tmp/p006-req08-quality.xnu1wZ/retest-2 /tmp/p006-phase-b.d7zDd1/upstream
+Original source and image hash backend/open_webui/events.py 414a3ab077011aaea828888e5b99c06e568929dfb7a2893c439f53ead86fb520
+Original source and image hash backend/open_webui/utils/middleware.py a830ddb27f42a96bcf5db08107e55897ea63545acd70eacccf1c34dfec9362cf
+REQ-08 retest run dab48940-85cf-4222-a418-ffccaccd5690
+Pinned dispatch probe exit code 0
+{"legacy_notice_arrivals": [], "mode": "fixed", "native_inbox_retained": true, "native_sink_arrivals": ["chat.created", "user.role_updated", "message.created"], "role_disconnect_calls": 1}
+{"delivery_decisions": ["duplicate_id", "malformed_envelope", "unsupported_type", "malformed_envelope", "sink_failure"], "mode": "fixed", "native_arrivals": ["chat.created", "user.role_updated", "message.created", "chat.finished"], "ordinary_inbox_calls": 1, "prohibited_content_count": 0, "scoped_deliveries": ["chat.created", "message.created", "model.provider_request.failed", "chat.failed", "chat.finished"], "scoped_inbox_calls": 0, "scoped_native_arrivals": 0}
+Injected native consumer failure observed. Restricted sentinel count 0.
+a861331833abfdd344ada54aa8a72f87f596981ccf99047d0d4fc6ac2d7ab512
+Local model health: {"status":"ok"}
+85f1d4b30f56f7e03713911da29e566a61f8d7a3465f5d3adf5bcdae98327cf6
+{"version":"0.13.4","deployment_id":""}
+Application console SHA-256 b02733faf11f1f99553440a969765f9a44c58018a9928795769c820347bfc7bc
+Assessed restricted-content marker counts [0, 0, 0]
+REQ-08 retest run dab48940-85cf-4222-a418-ffccaccd5690 exit code 0
+Launcher exit code 0

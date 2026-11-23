@@ -1,0 +1,8 @@
+baseline-dispatch.txt
+Mode native run ID e2028520-f8ef-4ed3-8c63-991db8878705
+WEBUI_SECRET_KEY is not set. It is a hard requirement when authentication is enabled.
+Mode native exit code 1
+baseline-dispatch-retry.txt
+Mode native run ID 7d3be251-ab98-4980-8c7b-c25417cfb30c
+WEBUI_SECRET_KEY is not set. It is a hard requirement when authentication is enabled.
+Mode native exit code 1

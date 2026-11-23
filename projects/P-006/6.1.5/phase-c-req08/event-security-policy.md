@@ -16,6 +16,8 @@ The correction uses a source patch against the pinned publisher and the direct i
 
 The application schedules the 12-second lab expiry after completion of the admitted request, for the bound chat and owner. An independent reader can verify both authorized access before expiry and denial after logical deletion. Process recovery, durable delivery and deduplication, other producers or deployments, provider failure diagnostics, backups, rotation and physical remnants remain outside this retest.
 
+The scope addresses `P006-611-REQ-08` and `P006-611-REQ-09` and the corresponding `P006-611-INV-06` and `P006-611-INV-07`. Storage, event, logging and excluded effect checks use existing boundaries 2 and 6–8. A B-05 private reply and the effects of that reply are separate claims. This retest exercises data containment under T04. The original model-behavior assessments retain their recorded outcomes. [Requirements and invariants](../../6.1.1/security-requirements.md#security-invariants) · [Trust boundaries](../../6.1.1/trust-boundaries.md#architecture)
+
 ## Acceptance
 
 1. Match upstream file hashes to the image before applying the patch and retain the patch as a review artifact.

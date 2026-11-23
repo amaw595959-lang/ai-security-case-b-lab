@@ -1,0 +1,6 @@
+Mode native run ID 55aaa0d7-5fc7-4ea5-952a-5bd179a84757
+{"legacy_notice_arrivals": [], "mode": "native", "native_inbox_retained": true, "native_sink_arrivals": ["chat.created", "user.role_updated", "message.created"], "role_disconnect_calls": 1}
+Mode native exit code 0
+Mode legacy run ID f52e8f7c-8375-4f6b-9b6e-8c7729db5111
+{"legacy_notice_arrivals": ["message.created"], "mode": "legacy", "native_inbox_retained": false, "native_sink_arrivals": [], "role_disconnect_calls": 0}
+Mode legacy exit code 0

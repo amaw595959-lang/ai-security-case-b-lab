@@ -1,31 +1,64 @@
-# P-006 Phase C — Native event, audit and retention verification
+# P-006 Phase C — REQ-08 native event, audit and retention checks
 
-This phase exercises the pinned Open WebUI application with the scoped REQ-08 policy. The branch builds on Phase B to reuse the native app launcher, role provisioning and SQL evidence helpers. The design specifies the observed boundaries, experiment and permitted copies. [Data-handling design](design.md)
-
-The assessment report links the executed comparison, scope limits and independent verification commands. [Phase C report](report.md)
+The original experiment compared native content-bearing receipts with a metadata-only local capture. Its dispatcher replacement skipped the native sink chain even for unrelated events. The corrected lab applies an explicit scope to a single synthetic notice operation and leaves unrelated dispatch and audit on the native path. [Original design](design.md) · [Original report](report.md) · [Defect analysis](defect-analysis.md) · [Event security policy](event-security-policy.md) · [Retest](retest.md)
 
 | File | Responsibility |
 | --- | --- |
-| `overlay/capture.py` | Projects native events before operational dispatch. It keeps approved HTTP decision metadata, suppresses the unapproved inbox path, and schedules expiry for the exact verified owner's chat. |
-| `overlay/serve_c.py` | Installs the scoped policy in the actual Open WebUI process before its main module loads. |
-| `overlay/check_c.py` | Exercises ordinary native chat, reads the journals and SQLite from an independent process, and validates the allowed and excluded data. |
-| `run_lab.sh` | Runs two fresh app containers against one pinned local model and captures their outcomes and topology. It removes the exercise's containers at exit. |
+| [Notice policy](overlay/capture.py) | Binds an admitted request to its actor, records only fixed metadata, reports rejected delivery and schedules owner-checked logical expiry. |
+| [Pinned source patch](overlay/notice-events.patch) | Checks scope at publication and just before direct inbox consumption. Native dispatch and inbox functions remain in place. |
+| [Launcher](run_lab.sh) and [app adapter](overlay/serve_c.py) | Compare source and image bytes, run with read-only source mounts and enable the approved fixture-only entry point. |
+| [Runtime check](overlay/check_c.py) and [native observer](tests/native_observer.py) | Send the approved synthetic requests and independently inspect HTTP, the local journals and SQLite. |
+| [Offline regressions](tests/test_capture.py) and [pinned dispatcher probe](tests/probe_dispatch.py) | Exercise normal and denied publication, bad or duplicate events, failure records and consumer behavior. The probe uses injected observers for the session and inbox call boundaries. |
+| [Historical replay](verify.py) and [original evidence](evidence/SHA256SUMS) | Preserve the first experiment and its original receipts. [Historical implementation snapshot](https://github.com/amaw595959-lang/ai-security-case-b-lab/tree/949cde98871379051ae8cf0af6ed8bd9aa75eaca/projects/P-006/6.1.5/phase-c-req08) |
+
+## Run the offline checks
+
+From the repository root, use Python 3.12. The component tests use the standard library. The archive replay checks the original comparison and controlled ledgers.
+
+~~~bash
+phase=projects/P-006/6.1.5/phase-c-req08
+python3.12 -B -m unittest discover -s "$phase/tests" -v
+(cd "$phase/evidence" && sha256sum --strict -c SHA256SUMS)
+python3.12 -B "$phase/verify.py"
+(cd "$phase/evidence/retest" && sha256sum --strict -c SHA256SUMS)
+~~~
+
+## Reproduce the isolated retest
+
+Use Linux amd64 Docker and Python 3.12. Pull the pinned Open WebUI and llama.cpp images and verify the public model artifact using the linked Phase B preparation. The launcher expects the directory containing `model.gguf`, a fresh output directory, and a checkout of the pinned Open WebUI source. [Image and model preparation](../../6.1.4/phase-b-req07/README.md#reproduce)
+
+~~~bash
+phase=projects/P-006/6.1.5/phase-c-req08
+umask 077
+work=$(mktemp -d /tmp/p006-req08.XXXXXX)
+git clone --depth 1 --branch v0.13.4 https://github.com/open-webui/open-webui.git "$work/upstream"
+test "$(git -C "$work/upstream" rev-parse HEAD)" = 0666e59d26a4d056e0bacee41742486badd71cf8
+python3.12 -B projects/P-006/6.1.1/model-evaluation/fetch_model.py "$work/model"
+chmod 0755 "$work"
+set -o pipefail
+bash "$phase/run_lab.sh" "$work/model" "$work/observed" "$work/upstream" 2>&1 | tee "$work/execution.txt"
+~~~
+
+The launcher runs the pinned dispatcher probe without network, then starts fresh Open WebUI and model containers that share a loopback-only namespace. They use synthetic accounts, no published ports and temporary stores. The output directory includes private logs for diagnosis. The archived review evidence uses the separate sanitized observations. Observe the known native and scoped deliveries first. Then inspect the tests for absence of restricted content and compare the owner and unrelated-user responses with SQLite. [Acceptance rules](event-security-policy.md#acceptance) · [Executed commands and results](retest.md)
 
 ## Reproduce
 
-Use a local Linux amd64 Docker engine and host Python 3.12. Download the pinned images and verified GGUF as in the Phase B instructions. The C harness expects the directory containing the GGUF named `model.gguf` and a new output path inside a private temporary directory. [Artifact setup](../../6.1.4/phase-b-req07/README.md#reproduce)
+For the before-change comparison, check out the historical implementation into a fresh read-only snapshot. Its deliberately content-bearing test copies are synthetic and belong in the private exercise directory. Use the original launcher at its pinned revision. [Original instructions](https://github.com/amaw595959-lang/ai-security-case-b-lab/blob/949cde98871379051ae8cf0af6ed8bd9aa75eaca/projects/P-006/6.1.5/phase-c-req08/README.md#reproduce)
 
-```bash
-cd projects/P-006/6.1.5/phase-c-req08
-umask 077
-p006_work=$(mktemp -d /tmp/p006-phase-c.XXXXXX)
-python3.12 -B ../../6.1.1/model-evaluation/fetch_model.py "$p006_work/model"
-chmod 0755 overlay ../../6.1.4/phase-b-req07/overlay
-chmod 0644 overlay/*.py ../../6.1.4/phase-b-req07/overlay/*.py
-set -o pipefail
-bash run_lab.sh "$p006_work/model" "$p006_work/observed" 2>&1 | tee "$p006_work/execution.txt"
-```
+With the pinned image loaded, run the current probe against the native runtime and the old overlay. Set `legacy_overlay` to the original snapshot's `overlay` directory. The probe must be readable by the isolated container.
 
-The readable files contain public exercise source. Their mounts are read-only. Each mode uses temporary state, only loopback and newly generated synthetic identities. The comparison deliberately enables native body auditing with fictional data. Keep its raw state inside the lab and publish only the necessary synthetic chat receipts. The controlled run uses native auditing `NONE`, an explicit metadata-only journal for the assessed HTTP decision, and a 12-second chat expiry. It waits up to 25 seconds to observe the actual state, then queries the same chat through the native route.
-
-Compare both execution logs and JSON ledgers. For the input preview and completion path, start with the native source receipts in baseline and both successful deliveries in controlled. For audit, check that the request and response were observed before the change and that the controlled HTTP decision actually arrived. For retention, confirm the owner could read, the unrelated user was denied, and the chat and message rows expired. [T04 acceptance evidence](../../6.1.1/case-b-test-design.md#p006-611-t04--proposed-req-08-storage-event-and-log-handling)
+~~~bash
+phase=projects/P-006/6.1.5/phase-c-req08
+image=ghcr.io/open-webui/open-webui@sha256:aa90751262a383d1279d76542fadab3a80c28b527f5415e9ed774182062525c1
+for mode in native legacy; do
+  run_id=$(python3.12 -B -c 'from uuid import uuid4; print(uuid4())')
+  docker run --rm --pull never --network none --cap-drop ALL --security-opt no-new-privileges \
+    --env-file projects/P-006/6.1.4/phase-b-req07/lab.env \
+    -e PYTHONPATH=/app/backend -e ENABLE_FUNCTIONS=false -e GLOBAL_LOG_LEVEL=WARNING \
+    -e P006_DATA_MODE=controlled -e "P006_RUN_ID=$run_id" \
+    --mount "type=bind,src=$(realpath "$phase/tests/probe_dispatch.py"),dst=/probe_dispatch.py,readonly" \
+    --mount "type=bind,src=$legacy_overlay,dst=/p006-legacy,readonly" \
+    --tmpfs /p006-state:rw,noexec,nosuid,nodev,mode=0700 \
+    "$image" python3 -B /probe_dispatch.py "$mode"
+done
+~~~
