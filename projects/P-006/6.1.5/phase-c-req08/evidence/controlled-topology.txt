@@ -1,0 +1,6 @@
+/p006-req08-model sha256:7b5a1bb10ee59dbaa8191c6ed1481c0a5b08e99d714970fee853df647035f07a none {}
+/p006-req08-controlled sha256:2003e3974c95004cc3c0f42e3f61fa82b7a9b61348b6428475e954c82d31eb51 container:f05c3c5fb86079e977ff4034294b397f53c7953f9d69cc2ff50c3dd235fb22bd {}
+interfaces: [(1, 'lo')]
+bf6f20a603055433b4b998119e17928fc4a89b35c42855dd7eada105058cae0a  /models/model.gguf
+version: 1.0.0-dev (build 12627, commit 225a5345b)
+built with GNU 15.2.0 for Linux x86_64
