@@ -1,0 +1,7 @@
+{
+  "algorithm": "SHA-256",
+  "sealed_packet_sha256": "644646b7dca5540688127b6f5546351cdaec100209c1a269bbca03d77b9d4791",
+  "fixture_sha256": "9449646989d873bb1c77a70697bbe7506c0e6fd325b5678d4d037badf40a42e3",
+  "created_utc": "2026-11-23T08:54:53+00:00",
+  "custody": "Separate restricted local assessor packet. Independent human custody and scoring are pending."
+}
