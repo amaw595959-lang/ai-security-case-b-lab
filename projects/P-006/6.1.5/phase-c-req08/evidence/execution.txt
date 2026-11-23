@@ -1,0 +1,16 @@
+$ bash run_lab.sh /tmp/p006-model.XBZlVG/artifacts /tmp/p006-phase-c.TRxyD0/observed
+f05c3c5fb86079e977ff4034294b397f53c7953f9d69cc2ff50c3dd235fb22bd
+Local model health: {"status":"ok"}
+96491a5afb2e832ba9a3abfaaf809df5dfea3e3d79caaa236354db0eb8e7b783
+{"version":"0.13.4","deployment_id":""}
+baseline run f32b92d2-0a96-498a-bc5d-77e1a01d7ba7 exit status: 0
+p006-req08-baseline
+p006-req08-baseline
+9672ee4d490a78e350a76dff0033868d3a0cec90f634360ed71db34df1aac2aa
+{"version":"0.13.4","deployment_id":""}
+Controlled application log marker count: 0
+controlled run 06fe0d75-2589-42aa-80e5-aea0374ff033 exit status: 0
+p006-req08-controlled
+p006-req08-controlled
+p006-req08-model
+p006-req08-model

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/p006-c/check_c.py", line 144, in <module>
+    main()
+  File "/p006-c/check_c.py", line 134, in main
+    controlled(chat_id)
+  File "/p006-c/check_c.py", line 92, in controlled
+    assert len(journal) == 2
+           ^^^^^^^^^^^^^^^^^
+AssertionError
