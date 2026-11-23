@@ -1,0 +1,38 @@
+name: Controlled Open WebUI integration
+
+"on":
+  workflow_dispatch:
+    inputs:
+      confirm_isolated:
+        description: Confirm the pinned synthetic loopback-only lab and approved artifact downloads
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  integration:
+    if: ${{ github.ref == 'refs/heads/main' && inputs.confirm_isolated }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Check out reviewed main
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: "3.12"
+      - name: Run the isolated integration checks
+        run: bash scripts/verification/run-integration.sh --confirm-isolated "$RUNNER_TEMP/p006-integration"
+      - name: Publish integration status only
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: p006-integration-status
+          path: ${{ runner.temp }}/p006-integration/integration.json
+          if-no-files-found: error
+          retention-days: 14

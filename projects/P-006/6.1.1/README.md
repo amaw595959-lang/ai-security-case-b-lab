@@ -8,6 +8,8 @@
 
 **Reference application:** Open WebUI (inspect actual source and deployed configuration before making claims).
 
+<a name="first-deliverables-not-completed"></a>
+
 ## First deliverables (design-stage completed; 2026-11-22)
 - [x] Engagement scope and authorized reference target/version
 - [x] User and workload identity inventory

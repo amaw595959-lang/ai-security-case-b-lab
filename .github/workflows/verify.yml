@@ -1,0 +1,71 @@
+name: Offline verification
+
+"on":
+  push:
+    branches: [main, "p006/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: "3.12"
+      - name: Install reviewed verification tools
+        id: tools
+        continue-on-error: true
+        run: |
+          python -m pip install --disable-pip-version-check --require-hashes --only-binary=:all: \
+            -r scripts/verification/requirements.lock
+          bash scripts/verification/install-actionlint.sh "$RUNNER_TEMP/p006-bin"
+      - name: Ensure historical citation object is available
+        if: steps.tools.outcome == 'success'
+        continue-on-error: true
+        run: |
+          commit=949cde98871379051ae8cf0af6ed8bd9aa75eaca
+          if ! git cat-file -e "$commit^{commit}" 2>/dev/null; then
+            git fetch --no-tags --no-recurse-submodules \
+              https://github.com/amaw595959-lang/ai-security-case-b-lab.git "$commit"
+          fi
+      - name: Verify offline integrity and execute local checks
+        if: steps.tools.outcome == 'success'
+        run: |
+          python -B scripts/verification/verify.py \
+            --actionlint "$RUNNER_TEMP/p006-bin/actionlint" \
+            --json "$RUNNER_TEMP/p006-verification.json"
+      - name: Record unavailable verification tooling
+        if: steps.tools.outcome == 'failure'
+        run: |
+          python - "$RUNNER_TEMP/p006-verification.json" <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+          result = {
+              "schema_version": 1, "scope": "offline", "status": "BLOCKED", "exit_code": 2,
+              "revision": os.environ["GITHUB_SHA"], "github_run_id": os.environ["GITHUB_RUN_ID"],
+              "checks": [{"name": "Install pinned tools", "status": "BLOCKED"}],
+          }
+          Path(sys.argv[1]).write_text(json.dumps(result, indent=2) + "\n")
+          PY
+          exit 2
+      - name: Publish structured offline check summary
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: p006-offline-verification
+          path: ${{ runner.temp }}/p006-verification.json
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,177 @@
+{
+  "revision": "0666e59d26a4d056e0bacee41742486badd71cf8",
+  "files": {
+    "backend/open_webui/config.py": {
+      "lines": 3440,
+      "sha256": "2fbbf686652656b1bc1e425fa9c4b219a4730b84e19d63858bbc05d1ba688bb8"
+    },
+    "backend/open_webui/env.py": {
+      "lines": 1290,
+      "sha256": "e7d3457cae9a9dfdff1526ec985b8af73a278193da311098dca5d7825bc7c6f9"
+    },
+    "backend/open_webui/events.py": {
+      "lines": 1357,
+      "sha256": "414a3ab077011aaea828888e5b99c06e568929dfb7a2893c439f53ead86fb520"
+    },
+    "backend/open_webui/internal/db.py": {
+      "lines": 583,
+      "sha256": "c3bb35b3e37efdba150873b679e67066bd3a18c54d125779a34f1f98b0f515e9"
+    },
+    "backend/open_webui/main.py": {
+      "lines": 3240,
+      "sha256": "0897d5752afd2c1490eb197440ebd8916bd6cbd76f412bb1a77368c319710b67"
+    },
+    "backend/open_webui/models/access_grants.py": {
+      "lines": 815,
+      "sha256": "77d25692f7fdf1feb25e7aa5d4e2c94f7e41c7a93e0e4c4b4c92ba51e2a30c3f"
+    },
+    "backend/open_webui/models/auths.py": {
+      "lines": 434,
+      "sha256": "9667aede48073d81358c2a4470238a8e41056c847785c980d827828802bcce8b"
+    },
+    "backend/open_webui/models/chat_messages.py": {
+      "lines": 1128,
+      "sha256": "b1f4b4c70f5cf18f5deea3241958d7c9857f0f2364bc82d0a38a84c32cb52e9a"
+    },
+    "backend/open_webui/models/chats.py": {
+      "lines": 3468,
+      "sha256": "c47b1bd20c1525abf44b44481499adc3035d1c10db32bc4ce75560b1241fae02"
+    },
+    "backend/open_webui/models/groups.py": {
+      "lines": 732,
+      "sha256": "c8bf90475fa9bfcee38b28d63bd9c9335e244094bdc417253a717eef3745d536"
+    },
+    "backend/open_webui/models/models.py": {
+      "lines": 785,
+      "sha256": "6a96356836bad93fed35259df1c2ad0b430d086193357f6bef0254b85d864e30"
+    },
+    "backend/open_webui/models/shared_chats.py": {
+      "lines": 240,
+      "sha256": "c5e1c2f9677e37cdbcb613b216d30b2917a52926ba880f5afd1cadd9eae36dfc"
+    },
+    "backend/open_webui/models/users.py": {
+      "lines": 936,
+      "sha256": "71dea4c6fffc4ba01b936f636738cbac2f321a15a318434eced81abba4ea494a"
+    },
+    "backend/open_webui/routers/auths.py": {
+      "lines": 1766,
+      "sha256": "67ebbe76b98547167b301f466b40174301a71063ba8ff84212ca6d06ed543b6e"
+    },
+    "backend/open_webui/routers/chats.py": {
+      "lines": 2497,
+      "sha256": "530caeaddb8c7beda6f93f3ba25d4b97268f30391507331bb76e380cb616efbb"
+    },
+    "backend/open_webui/routers/groups.py": {
+      "lines": 506,
+      "sha256": "4c764a3db502fe6037338237dac99ae4ea2dce34caf0192db3f43e5d1a0e5d0d"
+    },
+    "backend/open_webui/routers/ollama.py": {
+      "lines": 1789,
+      "sha256": "2f18d8f24f2343e6b8a4d0dfb2fe103f33bebd43db50486bcba7bd2e1cf7198a"
+    },
+    "backend/open_webui/routers/openai.py": {
+      "lines": 2108,
+      "sha256": "87ab9b61a2dc471b853ddfaaca14e7544d3ababd16e91034d01b0d867d5f20f4"
+    },
+    "backend/open_webui/routers/users.py": {
+      "lines": 1236,
+      "sha256": "dd58824c724ee3db083394ec840437e980550cdf306a33096ea00a172fe42833"
+    },
+    "backend/open_webui/socket/main.py": {
+      "lines": 1912,
+      "sha256": "b995033d55859fd2f187e7c09612c5a9a2b52979d30596d4a625fd3e31dc3347"
+    },
+    "backend/open_webui/tasks.py": {
+      "lines": 367,
+      "sha256": "c35fc1695e3f452d56484f43558c138754d3f223eb435876be3dd37ce946b124"
+    },
+    "backend/open_webui/utils/access_control/__init__.py": {
+      "lines": 419,
+      "sha256": "edf72c46a7c58f1903813ea01f75a0739ed9de57e1f4080b1dd46f5205b6a19c"
+    },
+    "backend/open_webui/utils/audit.py": {
+      "lines": 352,
+      "sha256": "6399e5e3185a472c162e4f2c2c176492c5da9129cfdffa7deeb3bd0c71bafa9f"
+    },
+    "backend/open_webui/utils/auth.py": {
+      "lines": 772,
+      "sha256": "6030edecfb549132f598b5bda4c1e7d4552c9e2924c39da65734d6e202f35174"
+    },
+    "backend/open_webui/utils/automations.py": {
+      "lines": 656,
+      "sha256": "63f85346e5db74af5fa63cb165ebe7c98ba172803fe7c55ae777d6c98d40a10a"
+    },
+    "backend/open_webui/utils/chat.py": {
+      "lines": 318,
+      "sha256": "941d05f36a3fbc7ef6c19d534096c8ba40f637ab07c8db36078e350ad8636e17"
+    },
+    "backend/open_webui/utils/headers.py": {
+      "lines": 247,
+      "sha256": "c06af3dfa2e5a91c116449fd1aaadd292328703ee7866fee69d0eeac7d0b5e0d"
+    },
+    "backend/open_webui/utils/inbox.py": {
+      "lines": 520,
+      "sha256": "e8f65e3df4bac9d487b97a315ce36652b3d9f14ee10d6868e4680f89d994bc4b"
+    },
+    "backend/open_webui/utils/logger.py": {
+      "lines": 225,
+      "sha256": "3ba37abf720a8d0fa62d77d3c25aa07a3107507df651c4ec1c2faca8caceb98e"
+    },
+    "backend/open_webui/utils/middleware.py": {
+      "lines": 6718,
+      "sha256": "a830ddb27f42a96bcf5db08107e55897ea63545acd70eacccf1c34dfec9362cf"
+    },
+    "backend/open_webui/utils/models.py": {
+      "lines": 658,
+      "sha256": "791f3cc0ce92cdc5f3901fd128c08d6400cf96ba40f803a7e2fd23be6bc8df26"
+    },
+    "backend/open_webui/utils/notifications.py": {
+      "lines": 434,
+      "sha256": "9fbd1c5208aa30de42048e055a0acbcb5946d2ad04a5423df10e5b2437527a6b"
+    },
+    "backend/open_webui/utils/oauth.py": {
+      "lines": 2547,
+      "sha256": "2416c3bb17343ded4bea594091def22007dd0c4926e77499a02e274e15d28593"
+    },
+    "backend/open_webui/utils/subagents.py": {
+      "lines": 863,
+      "sha256": "b1feb85f8bab95a3b39cfec4d43c2852f4bbf45f2e9f6d7614b580f9b195e13b"
+    },
+    "backend/open_webui/utils/telemetry/logs.py": {
+      "lines": 54,
+      "sha256": "0890f0144c26d74bb8bff9fb8121f7aaa4f1a5f6a4746b945116ce3d38945258"
+    },
+    "backend/open_webui/utils/tether.py": {
+      "lines": 874,
+      "sha256": "c7f54c3c0df3e0323a66235a168f1fe193467856896ede81930c5ec823372f7c"
+    },
+    "backend/open_webui/utils/webhook.py": {
+      "lines": 103,
+      "sha256": "6598c4588d9caaf38c80431e42200f4d7f0d9cda19a3f045828fe8678e4f3001"
+    },
+    "package.json": {
+      "lines": 179,
+      "sha256": "fd29aea7a72c2d68be21decd8dccbeaadd5ade3569bd4f60f1e60696d18b4f1b"
+    },
+    "src/lib/apis/openai/index.ts": {
+      "lines": 438,
+      "sha256": "c131f6ccd9219986321271238a462c395657a6e57491d2ab6ade3049feabb5ab"
+    },
+    "src/lib/components/chat/Chat.svelte": {
+      "lines": 6616,
+      "sha256": "e6b5fb800b2cec30d56677d53caf79fcfde9a6fec3b577280436276880f13922"
+    },
+    "src/lib/components/chat/Settings/About.svelte": {
+      "lines": 192,
+      "sha256": "13b202e2a69d7dcd5623398d1a9798883b81e082bdddd7ff8c8b1519c25b0153"
+    },
+    "src/lib/components/common/BuildVersion.svelte": {
+      "lines": 19,
+      "sha256": "ddb96ea19362a62d1c593767ff16c3e6d3ab54749810673341f86f640246d7fa"
+    },
+    "src/routes/+layout.svelte": {
+      "lines": 1316,
+      "sha256": "a1450d1471b1518d20bea98fe096117b8b77bced9b89569b1924d607c85a3270"
+    }
+  }
+}

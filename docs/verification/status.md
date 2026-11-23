@@ -1,0 +1,19 @@
+# P-006 current-status index
+
+Reviewed baseline `main` `f774af9c79f427d5f87fca40db2a4c5f54f9d8e1` includes the 6.1.1 supplement and the corrected isolated REQ-08 retest from PR #15. The pinned reference source is Open WebUI `v0.13.4` at `0666e59d26a4d056e0bacee41742486badd71cf8`. [Reviewed main](https://github.com/amaw595959-lang/ai-security-case-b-lab/tree/f774af9c79f427d5f87fca40db2a4c5f54f9d8e1) · [REQ-08 merge](https://github.com/amaw595959-lang/ai-security-case-b-lab/pull/15)
+
+| Record | Status and accepted evidence |
+| --- | --- |
+| 6.1.1 design and micro-tasks | Design-stage closure is recorded. The 14 supplemental micro-tasks cover the defined documentation scope. Human assessment and unobserved deployment controls have separate outcomes. [Closure](../../projects/P-006/6.1.1/closure-report.md) · [Coverage matrix](../../projects/P-006/6.1.1/microtasks/microtask-coverage.md) |
+| Prior Phase A, model comparison | `TESTED` for the stated standalone model runs. See the measured B-04/B-05 cases, denominators and uncertainty. [Phase A report](../../projects/P-006/6.1.3/phase-a-multi-model/report.md) |
+| Prior Phase B, REQ-07 | `PASS` for the recorded isolated preview integration under its approved conditions and observed paths. [Phase B report](../../projects/P-006/6.1.4/phase-b-req07/report.md) |
+| Prior Phase C, REQ-08 | The historical experiment and its diagnostics are preserved. The later scoped correction passed the isolated retest after reproducing the event-dispatch defect. [Historical report](../../projects/P-006/6.1.5/phase-c-req08/report.md) · [Defect and retest](../../projects/P-006/6.1.5/phase-c-req08/retest.md) |
+| Master program Phase 1, engineering verification | Toolkit and workflows prepared on their own review branch. Offline verification, hosted workflow and manual integration results have separate scopes. [Verification guide](README.md) · [Local transcript](phase-1-validation.txt) · [Machine summary](phase-1-validation.json) |
+| Master program Phase 2, portfolio and case study | Awaiting the Phase 1 review gate. [Current repository overview](../../README.md) |
+| Master program Phase 3, expanded integration and retest | `NOT_TESTED` for the new scope. Existing integrations above provide the starting receipts. [Prior test design](../../projects/P-006/6.1.1/case-b-test-design.md) |
+| Master program Phase 4, learner assessment preparation | `PENDING`. Candidate and rubric materials exist. Independent human evaluation needs the learner's unaided evidence. [Candidate materials](../../projects/P-099/6.8.8/p006-transfer-assessment/candidate.md) · [Human review procedure](../../projects/P-099/6.8.8/p006-transfer-assessment/assessment.md#review-procedure) |
+| Master program Phase 5, canonical 6.1.2 | `PROPOSED`. Work-package completion still needs an architecture, inventory, flows and verification scope. [Canonical work packages](../../strategy/334-subsublayers.md#61--ai-application-foundations) |
+
+`SOURCE_CONFIRMED` cites a pinned source mechanism. `PROPOSED` is a design awaiting implementation or assessment. `TESTED` identifies an executed case and its scope. `PASS` and `FAIL` identify observed agreement or disagreement with an oracle. `INCONCLUSIVE` describes an execution without sufficient evidence to decide. `BLOCKED` describes an unmet prerequisite. `NOT_TESTED` marks an unexecuted case. Documentary, standalone model, isolated application and human reviews each have their own evidence.
+
+The first hosted offline run succeeded. GitHub forced the then-pinned Node.js 20 actions onto Node.js 24. The workflow pins were updated to releases that declare Node.js 24. [Initial hosted run](https://github.com/amaw595959-lang/ai-security-case-b-lab/actions/runs/45167825833) · [Branch workflow runs](https://github.com/amaw595959-lang/ai-security-case-b-lab/actions?query=branch%3Ap006%2Fassurance-phase-1-ci)
