@@ -2,6 +2,8 @@
 
 **Canonical project:** P-006 — Secure-by-Default LLM Application Reference Architecture
 
+**New to 6.1.1?** Read the [complete plain-English learning and assessment guide](LEARNING_GUIDE.md). It connects all 14 micro-tasks, nine requirements, seven invariants, eight trust boundaries, tests, existing evidence, limitations and personal practice, while preserving this README and the formal closure report as source records.
+
 **Initial Case B scenarios to design**
 - B-04: User-Intent Misunderstanding.
 - B-05: Security Constraint Omission.
