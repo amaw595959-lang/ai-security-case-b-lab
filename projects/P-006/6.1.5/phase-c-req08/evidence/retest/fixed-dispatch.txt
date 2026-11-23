@@ -1,0 +1,3 @@
+{"legacy_notice_arrivals": [], "mode": "fixed", "native_inbox_retained": true, "native_sink_arrivals": ["chat.created", "user.role_updated", "message.created"], "role_disconnect_calls": 1}
+{"delivery_decisions": ["duplicate_id", "malformed_envelope", "unsupported_type", "malformed_envelope", "sink_failure"], "mode": "fixed", "native_arrivals": ["chat.created", "user.role_updated", "message.created", "chat.finished"], "ordinary_inbox_calls": 1, "prohibited_content_count": 0, "scoped_deliveries": ["chat.created", "message.created", "model.provider_request.failed", "chat.failed", "chat.finished"], "scoped_inbox_calls": 0, "scoped_native_arrivals": 0}
+Injected native consumer failure observed. Restricted sentinel count 0.

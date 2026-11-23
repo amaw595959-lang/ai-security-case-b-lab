@@ -1,0 +1,135 @@
+--- a/backend/open_webui/events.py
++++ b/backend/open_webui/events.py
+@@ -1257,6 +1257,13 @@
+             log.exception('Event sink failed for %s', event_payload.event)
+
+
++def notice_event_policy(request: Request | None):
++    if request is None:
++        return None
++    policy = getattr(request.app.state, 'p006_notice_event_policy', None)
++    return policy if policy is not None and policy.is_scoped(request) else None
++
++
+ async def publish_event(
+     request: Request,
+     event: EventDefinition | str | Event,
+@@ -1269,20 +1276,30 @@
+     message: str | None = None,
+ ) -> None:
+     """Deliver an event through the existing sinks. Call after committing source changes."""
+-    event_payload = (
+-        event
+-        if isinstance(event, Event)
+-        else build_event(
+-            request,
+-            event,
+-            actor=actor,
+-            subject_id=subject_id,
+-            subject_type=subject_type,
+-            source=source,
+-            data=data,
+-            message=message,
++    policy = notice_event_policy(request)
++    try:
++        event_payload = (
++            event
++            if isinstance(event, Event)
++            else build_event(
++                request,
++                event,
++                actor=actor,
++                subject_id=subject_id,
++                subject_type=subject_type,
++                source=source,
++                data=data,
++                message=message,
++            )
+         )
+-    )
++    except (TypeError, ValueError):
++        if policy is None:
++            raise
++        policy.reject_invalid(request)
++        return
++    if policy is not None:
++        policy.deliver(request, event_payload)
++        return
+     await _dispatch_event(request, event_payload)
+
+
+@@ -1318,19 +1335,20 @@
+         else 'upstream_error'
+     )
+
+-    # Server-log only; the upstream error body is otherwise invisible to admins
+-    # (event sinks require an event function or webhook to be configured).
+-    log.log(
+-        logging.ERROR if status >= 500 else logging.WARNING,
+-        'Upstream %s request failed: HTTP %d (%s) url=%s model=%s code=%s message=%s',
+-        provider,
+-        status,
+-        error_type,
+-        base_url,
+-        requested_model or '-',
+-        error_code or '-',
+-        error_text[:MAX_STRING_LENGTH] or '-',
+-    )
++    if notice_event_policy(request) is None:
++        # Server-log only; the upstream error body is otherwise invisible to admins
++        # (event sinks require an event function or webhook to be configured).
++        log.log(
++            logging.ERROR if status >= 500 else logging.WARNING,
++            'Upstream %s request failed: HTTP %d (%s) url=%s model=%s code=%s message=%s',
++            provider,
++            status,
++            error_type,
++            base_url,
++            requested_model or '-',
++            error_code or '-',
++            error_text[:MAX_STRING_LENGTH] or '-',
++        )
+
+     data = {
+         'error_type': error_type,
+--- a/backend/open_webui/utils/middleware.py
++++ b/backend/open_webui/utils/middleware.py
+@@ -45,7 +45,7 @@
+     GLOBAL_LOG_LEVEL,
+     RAG_SYSTEM_CONTEXT,
+ )
+-from open_webui.events import EVENTS, build_event, publish_event
++from open_webui.events import EVENTS, build_event, notice_event_policy, publish_event
+ from open_webui.models.access_grants import AccessGrants
+ from open_webui.models.chat_messages import ChatMessages
+ from open_webui.models.chats import Chats
+@@ -273,17 +273,18 @@
+         },
+         message=title or 'Chat finished',
+     )
+-    try:
+-        from open_webui.internal.db import get_async_db_context
+-        from open_webui.models.notifications import emit_changes
+-        from open_webui.utils.inbox import consume_event
+-
+-        async with get_async_db_context() as db:
+-            recipients = await consume_event(event, db=db)
+-            await db.commit()
+-        await emit_changes(recipients)
+-    except Exception:
+-        log.exception('Chat mention notification failed for %s', chat_id)
++    if notice_event_policy(request) is None:
++        try:
++            from open_webui.internal.db import get_async_db_context
++            from open_webui.models.notifications import emit_changes
++            from open_webui.utils.inbox import consume_event
++
++            async with get_async_db_context() as db:
++                recipients = await consume_event(event, db=db)
++                await db.commit()
++            await emit_changes(recipients)
++        except Exception:
++            log.exception('Chat mention notification failed for %s', chat_id)
+     await publish_event(request, event)
+     event_emitter = await get_event_emitter(metadata, update_db=False)
+     if event_emitter:

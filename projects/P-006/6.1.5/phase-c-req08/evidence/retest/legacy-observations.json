@@ -1,0 +1,29 @@
+[
+  {
+    "mode": "baseline",
+    "run_id": "9401d574-8c3a-4c44-9c0e-19688cac420d",
+    "status": "PASS",
+    "event_types": [
+      "message.created",
+      "message.created",
+      "chat.finished"
+    ],
+    "content_bearing_preview": true,
+    "content_bearing_audit": true
+  },
+  {
+    "mode": "controlled",
+    "run_id": "0a0b0993-376f-4f05-8f5e-121de1dce0a6",
+    "status": "PASS",
+    "event_types": [
+      "message.created",
+      "message.created",
+      "chat.finished"
+    ],
+    "approved_audit_arrived": true,
+    "remaining_rows": {
+      "chat": 0,
+      "chat_message": 0
+    }
+  }
+]

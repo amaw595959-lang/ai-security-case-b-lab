@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/p006-c/check_c.py", line 144, in <module>
+    main()
+  File "/p006-c/check_c.py", line 132, in main
+    baseline(candidate)
+  File "/p006-c/check_c.py", line 77, in baseline
+    assert len(observed) == 2 and set(by_type) == {"message.created", "chat.finished"}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

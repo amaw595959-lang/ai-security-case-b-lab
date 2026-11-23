@@ -1,0 +1,12 @@
+Command bash projects/P-006/6.1.5/phase-c-req08/run_lab.sh /tmp/p006-model.XBZlVG/artifacts /tmp/p006-req08-quality.xnu1wZ/retest-1 /tmp/p006-phase-b.d7zDd1/upstream
+Original source and image hash backend/open_webui/events.py 414a3ab077011aaea828888e5b99c06e568929dfb7a2893c439f53ead86fb520
+Original source and image hash backend/open_webui/utils/middleware.py a830ddb27f42a96bcf5db08107e55897ea63545acd70eacccf1c34dfec9362cf
+REQ-08 retest run f8d9b813-d810-48ab-8b75-c9140b2e66a2
+317a83187832882cc2d12963f1a9e549ba9555a16b5373c6472ea245c56e7379
+Local model health: {"status":"ok"}
+839476e590c75486ac769cfe6c5715b422bcc4e264441a948f5e8b6ef038c5c1
+{"version":"0.13.4","deployment_id":""}
+Application console SHA-256 cdaf85496106a1704a83c3a3767244953854a240340262d9dd687504858dd20d
+Assessed restricted-content marker counts [0, 0, 0]
+REQ-08 retest run f8d9b813-d810-48ab-8b75-c9140b2e66a2 exit code 0
+Launcher exit code 0

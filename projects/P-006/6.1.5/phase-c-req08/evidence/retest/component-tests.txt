@@ -1,0 +1,20 @@
+Python 3.12.14
+$ python3.12 -B -m unittest discover -s projects/P-006/6.1.5/phase-c-req08/tests -v
+test_audit_observes_denial_without_request_or_response_body (test_capture.AuditTests.test_audit_observes_denial_without_request_or_response_body) ... ok
+test_unhandled_request_error_is_audited_and_propagates (test_capture.AuditTests.test_unhandled_request_error_is_audited_and_propagates) ... ok
+test_unrelated_request_does_not_get_a_notice_record (test_capture.AuditTests.test_unrelated_request_does_not_get_a_notice_record) ... ok
+test_context_requires_server_admission (test_capture.EventPolicyTests.test_context_requires_server_admission) ... ok
+test_denies_actor_and_resource_mismatches (test_capture.EventPolicyTests.test_denies_actor_and_resource_mismatches) ... ok
+test_denies_malformed_envelopes (test_capture.EventPolicyTests.test_denies_malformed_envelopes) ... ok
+test_denies_unsupported_type_without_echo (test_capture.EventPolicyTests.test_denies_unsupported_type_without_echo) ... ok
+test_duplicate_delivery_is_observable (test_capture.EventPolicyTests.test_duplicate_delivery_is_observable) ... ok
+test_failed_consumer_records_failure_and_allows_next_event (test_capture.EventPolicyTests.test_failed_consumer_records_failure_and_allows_next_event) ... ok
+test_failure_events_preserve_security_observation_without_payload (test_capture.EventPolicyTests.test_failure_events_preserve_security_observation_without_payload) ... ok
+test_metadata_only_preserves_native_order (test_capture.EventPolicyTests.test_metadata_only_preserves_native_order) ... ok
+test_unavailable_decision_journal_has_body_free_console_fallback (test_capture.EventPolicyTests.test_unavailable_decision_journal_has_body_free_console_fallback) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.012s
+
+OK
+Exit code 0
