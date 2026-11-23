@@ -4,9 +4,9 @@ from yaml import YAMLError, safe_load
 
 
 ACTIONS = {
-    "actions/checkout": "11bd71901bbe5b1630ceea73d27597364c9af683",
-    "actions/setup-python": "a26af69be951a213d495a4c3e4e4022e16d87065",
-    "actions/upload-artifact": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+    "actions/checkout": "08c6903cd8c0fde910a37f88322edcfb5dd907a8",
+    "actions/setup-python": "e797f83bcb11b83ae66e0230d6156d7c80228e7c",
+    "actions/upload-artifact": "b7c566a772e6b6bfb58ed0dc250532a479d7789f",
 }
 FAST = ".github/workflows/verify.yml"
 MANUAL = ".github/workflows/integration.yml"

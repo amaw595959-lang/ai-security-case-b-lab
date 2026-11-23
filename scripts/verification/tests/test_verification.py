@@ -14,7 +14,7 @@ from catalog import PROJECT_FILE, RISK_FILE, WORK_FILE, check_catalog
 from references import check_links, headings
 from repository import DESIGN, EVENTS, PIN, Repository, sha256
 from verify import ROOT, Report
-from workflows import FAST, GUARD, MANUAL, check_configuration
+from workflows import ACTIONS, FAST, GUARD, MANUAL, check_configuration
 
 
 LOCK = {"revision": PIN, "files": {}}
@@ -168,7 +168,7 @@ class WorkflowTests(RepositoryFixture):
         fast = (ROOT / FAST).read_text()
         self.put(FAST, fast.replace("contents: read", "contents: write")
                  .replace("pull_request:", "pull_request_target:")
-                 .replace("11bd71901bbe5b1630ceea73d27597364c9af683", "v4"))
+                 .replace(ACTIONS["actions/checkout"], "v5"))
         self.put(MANUAL, (ROOT / MANUAL).read_text())
         _, errors = check_configuration(self.repo())
         self.assertTrue(any("permissions" in issue for issue in errors))
