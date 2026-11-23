@@ -1,0 +1,7 @@
+$ docker stop --timeout 5 p006-req07-webui p006-req07-model
+p006-req07-webui
+p006-req07-model
+$ docker rm p006-req07-webui p006-req07-model
+p006-req07-webui
+p006-req07-model
+Teardown exit status: 0

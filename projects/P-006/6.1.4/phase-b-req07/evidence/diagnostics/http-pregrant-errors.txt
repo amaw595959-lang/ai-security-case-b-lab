@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/p006/check_http.py", line 253, in <module>
+    main()
+  File "/p006/check_http.py", line 199, in main
+    assert [model["id"] for model in models["data"]] == [MODEL]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

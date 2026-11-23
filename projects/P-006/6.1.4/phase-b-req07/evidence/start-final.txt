@@ -1,0 +1,5 @@
+$ bash start.sh /tmp/p006-model.XBZlVG/artifacts
+e397df56070e464103a6e960f4aedb14219fc3bc13331a1695976ea5d52834ae
+Local model health: {"status":"ok"}
+aa56aebf8763bd3a2bb8b01e4ca3fa148f6e7ff796030ac55d1dd365cc209da0
+{"version":"0.13.4","deployment_id":""}
