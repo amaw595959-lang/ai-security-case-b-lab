@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/p006-c/check_c.py", line 150, in <module>
+    main()
+  File "/p006-c/check_c.py", line 138, in main
+    baseline(candidate)
+  File "/p006-c/check_c.py", line 78, in baseline
+    chat_audit, = [row for row in raw_audits if row.get("request_uri", "").endswith("/api/chat/completions")]
+    ^^^^^^^^^^^
+ValueError: too many values to unpack (expected 1)
