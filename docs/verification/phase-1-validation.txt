@@ -106,3 +106,39 @@ The initial locked pip command omitted install, reported no such option: --no-in
 The corrected pip install command installed all nine hash-locked packages. The pinned actionlint release archive matched its checksum.
 A separate shallow git clone fetched 949cde98871379051ae8cf0af6ed8bd9aa75eaca by SHA and git cat-file -t returned commit.
 The original micro-task validation script separately reported 154 citation targets and anchors.
+
+Node.js 24 pin retest
+Hosted run 45167825833 passed on bc72384 and reported a Node.js 20 override.
+Verified these release tags with git ls-remote and inspected the pinned action.yml files.
+actions/checkout v5.0.0 08c6903cd8c0fde910a37f88322edcfb5dd907a8 using node24
+actions/setup-python v6.0.0 e797f83bcb11b83ae66e0230d6156d7c80228e7c using node24
+actions/upload-artifact v6.0.0 b7c566a772e6b6bfb58ed0dc250532a479d7789f using node24
+$ git rev-parse HEAD
+f8e8715fa40f56866f0963a05f3336dc111b43d5
+$ python -B scripts/verification/verify.py --upstream /tmp/p006-phase-b.d7zDd1/upstream --actionlint /tmp/p006-ci.dnymYT/bin/actionlint --json /tmp/p006-ci.dnymYT/node24.json
+PASS         Markdown and source references
+PASS         Open WebUI Git blob recheck
+PASS         Canonical IDs and traces
+PASS         Archived SHA-256 manifests
+PASS         Practice transcript checksums
+PASS         Evidence sanitization and secret patterns
+PASS         Python compilation
+PASS         Python static correctness
+PASS         Shell syntax projects/P-006/6.1.4/phase-b-req07/start.sh
+PASS         Shell syntax projects/P-006/6.1.5/phase-c-req08/run_lab.sh
+PASS         Shell syntax scripts/verification/install-actionlint.sh
+PASS         Shell syntax scripts/verification/run-integration.sh
+PASS         Workflow policy
+PASS         GitHub Actions syntax and expressions
+PASS         Case B practice suite
+PASS         REQ-07 standalone HTTP/SQLite
+PASS         REQ-08 event policy
+PASS         Verification toolkit tests
+PASS         Standalone model evidence replay
+PASS         Phase A evidence replay
+PASS         REQ-07 archived preview and SQLite replay
+PASS         Phase C original evidence replay
+PASS         Phase C scoped event and expiry replay
+NOT_TESTED   Fresh Docker and model integration
+  Outside the offline suite. See the guarded manual integration workflow.
+PASS offline verification. Exit code 0.
